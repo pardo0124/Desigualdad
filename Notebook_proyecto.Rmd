@@ -1,13 +1,14 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
-
 
 ```{r}
 library(wbstats)
 GINI<- wb_search("GINI")
-SI.POV.GINI <- wb_data("SI.POV.GINI",country = "all", start_date = 2010)
+Desigualdad <- wb_data("SI.POV.GINI",country = "all", start_date = 2010)
 
 Taxes<- wb_search("Taxes")
 Progresividad_2010<-wb_data("GC.TAX.YPKG.RV.ZS",country = "all", start_date = 2010)
@@ -74,14 +75,22 @@ Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
 
 6.  **Período que cubre las bases de datos:**
 
-    El periodo para analizar es el año 2010 en todas las variables excepto en la
-    variable de gasto en educación, de la cual se va a examinar su comportamiento
-    tanto en el año 2000 y 2010.
+    El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
+
+## Anexos
+
+```{r Grafica, echo=TRUE}
+Figura1 <- plot(Gasto_educ_2000$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2000", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad") 
+```
+
+[^1]
+
+[^1]: Figura 1
 
 ## Bibliografía
 
--   Banco Mundial (16 de diciembre, 2020). Índice de Gini. [SI.POV.GINI]. Recuperado de [<https://datos.bancomundial.org/indicator/SI.POV.GINI>](https://datos.bancomundial.org/indicator/SI.POV.GINI){.uri}
+-   Banco Mundial (16 de diciembre, 2020). Índice de Gini. [SI.POV.GINI]. Recuperado de [\<https://datos.bancomundial.org/indicator/SI.POV.GINI\>](https://datos.bancomundial.org/indicator/SI.POV.GINI){.uri}
 
--   Banco Mundial (16 de diciembre, 2020). Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total de impuestos) [GC.TAX.YPKG.ZS]. Recuperado de [<https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS>](https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS){.uri}
+-   Banco Mundial (16 de diciembre, 2020). Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total de impuestos) [GC.TAX.YPKG.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS\>](https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS){.uri}
 
--   Banco Mundial (16 de diciembre, 2020). Gasto público en educación, total (% del PIB). [SE.XPD.TOTL.GD.ZS]. Recuperado de [<https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS>](https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS){.uri}
+-   Banco Mundial (16 de diciembre, 2020). Gasto público en educación, total (% del PIB). [SE.XPD.TOTL.GD.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS\>](https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS){.uri}
