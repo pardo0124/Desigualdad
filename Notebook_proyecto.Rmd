@@ -5,6 +5,7 @@ output:
     keep_md: yes
 ---
 
+Hola
 ```{r}
 library(wbstats)
 GINI<- wb_search("GINI")
