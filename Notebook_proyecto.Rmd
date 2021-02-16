@@ -87,6 +87,11 @@ Figura1 <- plot(Gasto_educ_2000$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab
 
 [^1]: Figura 1
 
+```{r}
+Figura2 <- plot(Gasto_educ_2010$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2010", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad")
+```
+
+
 ## Bibliografía
 
 -   Banco Mundial (16 de diciembre, 2020). Índice de Gini. [SI.POV.GINI]. Recuperado de [\<https://datos.bancomundial.org/indicator/SI.POV.GINI\>](https://datos.bancomundial.org/indicator/SI.POV.GINI){.uri}
