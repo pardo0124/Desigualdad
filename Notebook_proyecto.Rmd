@@ -1,8 +1,8 @@
 ---
 title: "R Notebook"
 output:
-  html_document:
-    df_print: paged
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r}
