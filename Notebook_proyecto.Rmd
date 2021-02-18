@@ -91,6 +91,9 @@ Figura1 <- plot(Gasto_educ_2000$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab
 Figura2 <- plot(Gasto_educ_2010$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2010", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad")
 ```
 
+[^2]
+
+[^2]: Figura 2
 
 ## Bibliografía
 
