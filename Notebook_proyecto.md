@@ -1,0 +1,111 @@
+---
+title: "R Notebook"
+output:
+  html_document: 
+    keep_md: yes
+---
+
+
+```r
+library(wbstats)
+GINI<- wb_search("GINI")
+Desigualdad <- wb_data("SI.POV.GINI",country = "all", start_date = 2010)
+
+Taxes<- wb_search("Taxes")
+Progresividad_2010<-wb_data("GC.TAX.YPKG.RV.ZS",country = "all", start_date = 2010)
+
+waste_in_education<- wb_search("Government expenditure on education")
+Gasto_educ_2010<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2010)
+
+Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
+```
+
+## Pregunta de investigación:
+
+¿Cuál es el efecto de la inversión en educación (como % del PIB) sobre la desigualdad (coeficiente Gini) en los países del mundo?
+
+## Bases de datos:
+
+1.  **Nombres:**
+
+    -   **SI.POV.GINI** *(coeficiente de Gini)*
+
+    -   **GC.TAX.YPKG.RV.ZS** *(Impuestos sobre la renta, las utilidades y las ganancias de capital como porcentaje de la recaudación total)*
+
+    -   **SE.XPD.TOTL.GD.ZS** *(gasto en educación como % del PIB)*
+
+2.  **Entidad que produjo las bases de datos:**
+
+    Banco Mundial (base de acceso público).
+
+3.  **Número de variables:**
+
+    Las variables que vamos a utilizar son cuatro, y son las siguientes:
+
+    -   **País**:
+
+        Esta es una variable descriptiva que nos indica el nombre de cada país.
+
+    <!-- -->
+
+    -   **Coeficiente de Gini**:
+
+        Este es un índice muy conocido mundialmente por ser el primer referente a la hora de medir la desigualdad dentro de los países. Este coeficiente oscila entre `0` y `100`, donde `0` indica perfecta igualdad y `100` señala una completa desigualdad.
+
+        > El índice de Gini mide hasta qué punto la distribución del ingreso (o, en algunos casos, el gasto de consumo) entre individuos u hogares dentro de una economía se aleja de una distribución perfectamente equitativa. Una curva de Lorenz muestra los porcentajes acumulados de ingreso recibido total contra la cantidad acumulada de receptores, empezando a partir de la persona o el hogar más pobre. El índice de Gini mide la superficie entre la curva de Lorenz y una línea hipotética de equidad absoluta, expresada como porcentaje de la superficie máxima debajo de la línea. Así, un índice de Gini de 0 representa una equidad perfecta, mientras que un índice de 100 representa una inequidad perfecta. (Banco Mundial, 2020)
+
+    -   **Gasto en educación (% del PIB)**
+
+        Esta variable nos indica el nivel de inversión en educación que realizan los diferentes países en relación con su producto interno bruto (PIB), con esta variable buscamos identificar los diferentes gastos en educación que se pueden encontrar en los diferentes países a nivel mundial y su relación con la desigualdad interna de los mismos.
+
+        > El gasto público en educación como porcentaje del PIB comprende el gasto público total (corriente y de capital) en educación expresado como porcentaje del Producto Interno Bruto (PIB) en un año determinado. El gasto público en educación incluye el gasto del Gobierno en instituciones educativas (públicas y privadas), administración educativa y subsidios o transferencias para entidades privadas (estudiantes/hogares y otras entidades privadas). (Banco Mundial, 2020)
+
+    -   **Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total del recaudo)**
+
+        Esta es nuestra variable control del modelo econométrico que queremos construir pues, al medir el nivel porcentual de impuestos que se le cobran a los ingresos, utilidades y ganancias del capital de las empresas en relación con el recaudo total, es un buen indicador del nivel de progresividad de la tributación en los diferentes países, y esto está directamente relacionado con la desigualdad de estos.
+
+        > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
+
+4.  **Número de observaciones:**
+
+    A causa de la naturaleza del estudio de corte transversal, estas observaciones son los diferentes países del mundo de los cuales se encontraron datos disponibles, los cuales suman 264 países/observaciones.
+
+5.  **Tipo de base de datos:**
+
+    Escogimos trabajar con una base de datos de **corte transversal** debido a nuestras capacidades y al gran número de observaciones que pudimos encontrar.
+
+6.  **Período que cubre las bases de datos:**
+
+    El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
+
+## Anexos
+
+
+```r
+Figura1 <- plot(Gasto_educ_2000$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2000", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad") 
+```
+
+![](Notebook_proyecto_files/figure-html/Grafica-1.png)<!-- -->
+
+[^1]
+
+[^1]: Figura 1
+
+
+```r
+Figura2 <- plot(Gasto_educ_2010$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2010", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad")
+```
+
+![](Notebook_proyecto_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+
+[^2]
+
+[^2]: Figura 2
+
+## Bibliografía
+
+-   Banco Mundial (16 de diciembre, 2020). Índice de Gini. [SI.POV.GINI]. Recuperado de [\<https://datos.bancomundial.org/indicator/SI.POV.GINI\>](https://datos.bancomundial.org/indicator/SI.POV.GINI){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total de impuestos) [GC.TAX.YPKG.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS\>](https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). Gasto público en educación, total (% del PIB). [SE.XPD.TOTL.GD.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS\>](https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS){.uri}
