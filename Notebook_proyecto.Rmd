@@ -10,17 +10,28 @@ output:
 #install.packages("wbstats")
 library(wbstats)
 #GINI<- wb_search("GINI")
-Desigualdad <- wb_data("SI.POV.GINI",country = "Colombia", start_date = 1960, end_date = 2019)
+Desigualdad <- wb_data("SI.POV.GINI",country = "countries_only", start_date = 1960, end_date = 2019)
 
 #Taxes<- wb_search("Taxes")
-Progresividad<-wb_data("GC.TAX.YPKG.RV.ZS",country = "Colombia", start_date = 1960, end_date = 2019)
+Progresividad<-wb_data("GC.TAX.YPKG.RV.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
 
 #waste_in_education<- wb_search("Government expenditure on education")
-Gasto_educ<-wb_data("SE.XPD.TOTL.GD.ZS",country = "Colombia", start_date = 1960, end_date = 2019)
+Gasto_educ<-wb_data("SE.XPD.TOTL.GD.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
 
 #INf<- wb_search("Inflation")
-Inflacion <- wb_data("FP.CPI.TOTL.ZG",country = "Colombia", start_date = 1960, end_date = 2019)
+Inflacion <- wb_data("FP.CPI.TOTL.ZG",country = "countries_only", start_date = 1960, end_date = 2019)
 
+#INf<- wb_search("PIB")
+PIB_PER_CAPITA <- wb_data("NY.GDP.PCAP.CD",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#INf<- wb_search("Population")
+Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960, end_date = 2019)
+
+```
+
+```{r}
+library(tidyverse)
+panel_desigualdad <- full_join(Desigualdad,Progresividad,Gasto_educ,Inflacion,PIB_PER_CAPITA, Poblacion, by=c("iso3c","date"))
 ```
 
 ## Pregunta de investigación:
