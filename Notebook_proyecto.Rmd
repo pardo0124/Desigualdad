@@ -6,17 +6,21 @@ output:
 ---
 
 ```{r}
+#install.packages("utf8")
+#install.packages("wbstats")
 library(wbstats)
-GINI<- wb_search("GINI")
-Desigualdad <- wb_data("SI.POV.GINI",country = "all", start_date = 2010)
+#GINI<- wb_search("GINI")
+Desigualdad <- wb_data("SI.POV.GINI",country = "Colombia", start_date = 1960, end_date = 2019)
 
-Taxes<- wb_search("Taxes")
-Progresividad_2010<-wb_data("GC.TAX.YPKG.RV.ZS",country = "all", start_date = 2010)
+#Taxes<- wb_search("Taxes")
+Progresividad<-wb_data("GC.TAX.YPKG.RV.ZS",country = "Colombia", start_date = 1960, end_date = 2019)
 
-waste_in_education<- wb_search("Government expenditure on education")
-Gasto_educ_2010<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2010)
+#waste_in_education<- wb_search("Government expenditure on education")
+Gasto_educ<-wb_data("SE.XPD.TOTL.GD.ZS",country = "Colombia", start_date = 1960, end_date = 2019)
 
-Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
+#INf<- wb_search("Inflation")
+Inflacion <- wb_data("FP.CPI.TOTL.ZG",country = "Colombia", start_date = 1960, end_date = 2019)
+
 ```
 
 ## Pregunta de investigación:
