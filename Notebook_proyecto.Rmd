@@ -31,14 +31,22 @@ Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960
 
 ```{r}
 #library(tidyverse)
-bases <- c(Desigualdad, Progresividad, Gasto_educ, Inflacion, PIB_PER_CAPITA, Poblacion)
-for (i in seq_along(bases))
-panel_desigualdad <- full_join(bases[i],bases[i+1], by=c("iso3c","date"))
+base <- full_join(Desigualdad,Gasto_educ, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Inflacion, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,PIB_PER_CAPITA, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Poblacion, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Progresividad, by=c("iso3c","date","iso2c","country"))
+ 
+base_final=base[,c("iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")]
+names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion","Progresividad")
+
 ```
 
-## Pregunta de investigación:
+## Pregunta de investigación e hipótesis:
 
 ¿Cuál es el efecto de la inversión en educación (como % del PIB) sobre la desigualdad (coeficiente Gini) en los países del mundo?
+
+**Hipótesis**: Creemos que existe una relación negativa entre la inversión en educación y el GINI (desigualdad), es decir, que la inversión en educación ayuda a reducir la desigualdad.
 
 ## Bases de datos:
 
@@ -50,19 +58,23 @@ panel_desigualdad <- full_join(bases[i],bases[i+1], by=c("iso3c","date"))
 
     -   **SE.XPD.TOTL.GD.ZS** *(gasto en educación como % del PIB)*
 
+    -   **"FP.CPI.TOTL.ZG"** *(inflación)*
+
+    -   **"NY.GDP.PCAP.CD"** *(PIB per cápita)*
+
+    -   **"SP.POP.TOTL"** *(Población)*
+
 2.  **Entidad que produjo las bases de datos:**
 
     Banco Mundial (base de acceso público).
 
 3.  **Número de variables:**
 
-    Las variables que vamos a utilizar son cuatro, y son las siguientes:
+    Las variables que vamos a utilizar son seis, y son las siguientes:
 
     -   **País**:
 
         Esta es una variable descriptiva que nos indica el nombre de cada país.
-
-    <!-- -->
 
     -   **Coeficiente de Gini**:
 
@@ -80,7 +92,11 @@ panel_desigualdad <- full_join(bases[i],bases[i+1], by=c("iso3c","date"))
 
         Esta es nuestra variable control del modelo econométrico que queremos construir pues, al medir el nivel porcentual de impuestos que se le cobran a los ingresos, utilidades y ganancias del capital de las empresas en relación con el recaudo total, es un buen indicador del nivel de progresividad de la tributación en los diferentes países, y esto está directamente relacionado con la desigualdad de estos.
 
-        > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
+            > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
+
+    -   
+
+    -   
 
 4.  **Número de observaciones:**
 
@@ -94,23 +110,6 @@ panel_desigualdad <- full_join(bases[i],bases[i+1], by=c("iso3c","date"))
 
     El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
 
-## Anexos
-
-```{r Grafica, echo=TRUE}
-Figura1 <- plot(Gasto_educ_2000$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2000", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad") 
-```
-
-[^1]
-
-[^1]: Figura 1
-
-```{r}
-Figura2 <- plot(Gasto_educ_2010$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2010", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad")
-```
-
-[^2]
-
-[^2]: Figura 2
 
 ## Bibliografía
 
