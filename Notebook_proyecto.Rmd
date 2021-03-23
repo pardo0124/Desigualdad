@@ -30,8 +30,10 @@ Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960
 ```
 
 ```{r}
-library(tidyverse)
-panel_desigualdad <- full_join(Desigualdad,Progresividad,Gasto_educ,Inflacion,PIB_PER_CAPITA, Poblacion, by=c("iso3c","date"))
+#library(tidyverse)
+bases <- c(Desigualdad, Progresividad, Gasto_educ, Inflacion, PIB_PER_CAPITA, Poblacion)
+for (i in seq_along(bases))
+panel_desigualdad <- full_join(bases[i],bases[i+1], by=c("iso3c","date"))
 ```
 
 ## Pregunta de investigación:
