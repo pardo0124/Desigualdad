@@ -70,7 +70,7 @@ names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflac
 
 3.  **Número de variables:**
 
-    Las variables que vamos a utilizar son seis, y son las siguientes:
+    Las variables que vamos a utilizar son 6, y son las siguientes:
 
     -   **País**:
 
@@ -109,7 +109,6 @@ names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflac
 6.  **Período que cubre las bases de datos:**
 
     El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
-
 
 ## Bibliografía
 
