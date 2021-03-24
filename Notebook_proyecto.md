@@ -105,7 +105,7 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
     -   **País y código**
 
-        Estas son variables descriptivas que identifican los paises del cuales se está tomando cada una de las observaciónes, no existen agregados regionales (sólo países).
+        Estas son variables descriptivas que identifican los paises de los cuales se está tomando cada una de las observaciónes, no existen agregados regionales (sólo países).
 
     -   **Año**
 
@@ -115,7 +115,7 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
         Este es un índice muy conocido mundialmente por ser el primer referente a la hora de medir la desigualdad dentro de los países. Este coeficiente oscila entre `0` y `100`, donde `0` indica perfecta igualdad y `100` señala una completa desigualdad.
 
-        > El índice de Gini mide hasta qué punto la distribución del ingreso (o, en algunos casos, el gasto de consumo) entre individuos u hogares dentro de una economía se aleja de una distribución perfectamente equitativa. Una curva de Lorenz muestra los porcentajes acumulados de ingreso recibido total contra la cantidad acumulada de receptores, empezando a partir de la persona o el hogar más pobre. El índice de Gini mide la superficie entre la curva de Lorenz y una línea hipotética de equidad absoluta, expresada como porcentaje de la superficie máxima debajo de la línea. Así, un índice de Gini de 0 representa una equidad perfecta, mientras que un índice de 100 representa una inequidad perfecta. (Banco Mundial, 2020)
+        > El índice de Gini mide hasta qué punto la distribución del ingreso (o, en algunos casos, el gasto de consumo) entre individuos u hogares dentro de una economía se aleja de una distribución perfectamente equitativa. Una curva de Lorenz muestra los porcentajes acumulados de ingreso recibido total contra la cantidad acumulada de receptores, empezando a partir de la persona o el hogar más pobre. El índice de Gini mide la superficie entre la curva de Lorenz y una línea hipotética de equidad absoluta, expresada como porcentaje de la superficie máxima debajo de la línea. Así, un índice de Gini de 0 representa una equidad perfecta, mientras que un índice de 100 representa una inequidad perfecta.(Banco Mundial, 2020)
 
     -   **Gasto en educación (% del PIB), variable independiente principal**
 
@@ -162,11 +162,11 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
 5.  **Tipo de base de datos:**
 
-    Escogimos trabajar con una base de datos de **datos panel,** esto para obtener un gran número de observaciones que apoye la robustez del estudio.
+    Escogimos trabajar con una base de datos agrupada en forma de un **tibble,** con las características para la metodología de **datos panel,** esto para obtener un gran número de observaciones que apoye la robustez del estudio.
 
 6.  **Período que cubre las bases de datos:**
 
-    El periodo para analizar va desde el año 1960 hsata 2019.
+    El periodo para analizar va desde el año 1960 hsata el 2019, para un total de 60 años.
 
 ## Plan de análisis:
 
