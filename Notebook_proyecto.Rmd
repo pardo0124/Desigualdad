@@ -71,6 +71,10 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
 3.  **Número de variables:**
 
+    ```{r}
+    ncol(base_final)
+    ```
+
     Las variables que vamos a utilizar son 9, y son las siguientes:
 
     -   **País y código**:
@@ -122,13 +126,17 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
     Las observaciones son los diferentes países del mundo para cada año entre 1960 y 2019, de este modo se encontraron un total 13020 observaciones.
 
+    ```{r}
+    nrow(base_final)
+    ```
+
 5.  **Tipo de base de datos:**
 
-    Escogimos trabajar con una base de datos de **corte transversal** debido a nuestras capacidades y al gran número de observaciones que pudimos encontrar.
+    Escogimos trabajar con una base de datos de **datos panel,** esto para obtener un gran número de observaciones que apoye la robustez del estudio.
 
 6.  **Período que cubre las bases de datos:**
 
-    El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
+    El periodo para analizar va desde el año 1960 hsata 2019.
 
 ## Bibliografía
 
