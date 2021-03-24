@@ -91,48 +91,56 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
 3.  **Número de variables:**
 
+    
+    ```r
+    ncol(base_final)
+    ```
+    
+    ```
+    ## [1] 9
+    ```
+
     Las variables que vamos a utilizar son 9, y son las siguientes:
 
-    -   **País y código**:
+    -   **País y código**
 
         Estas son variables descriptivas que identifican los paises del cuales se está tomando cada una de las observaciónes, no existen agregados regionales (sólo países).
 
-    -   **Año:**
+    -   **Año**
 
         Esta variable nos da la ubicación en el tiempo de cada observación y nos permite hacer un analisis longitudinal.
 
-    -   **Coeficiente de Gini**:
+    -   **Coeficiente de Gini, variable dependiente**
 
         Este es un índice muy conocido mundialmente por ser el primer referente a la hora de medir la desigualdad dentro de los países. Este coeficiente oscila entre `0` y `100`, donde `0` indica perfecta igualdad y `100` señala una completa desigualdad.
 
         > El índice de Gini mide hasta qué punto la distribución del ingreso (o, en algunos casos, el gasto de consumo) entre individuos u hogares dentro de una economía se aleja de una distribución perfectamente equitativa. Una curva de Lorenz muestra los porcentajes acumulados de ingreso recibido total contra la cantidad acumulada de receptores, empezando a partir de la persona o el hogar más pobre. El índice de Gini mide la superficie entre la curva de Lorenz y una línea hipotética de equidad absoluta, expresada como porcentaje de la superficie máxima debajo de la línea. Así, un índice de Gini de 0 representa una equidad perfecta, mientras que un índice de 100 representa una inequidad perfecta. (Banco Mundial, 2020)
 
-    -   **Gasto en educación (% del PIB)**
+    -   **Gasto en educación (% del PIB), variable independiente principal**
 
         Esta variable nos indica el nivel de inversión en educación que realizan los diferentes países en relación con su producto interno bruto (PIB), con esta variable buscamos identificar los diferentes gastos en educación que se pueden encontrar en los diferentes países a nivel mundial y su relación con la desigualdad interna de los mismos.
 
         > El gasto público en educación como porcentaje del PIB comprende el gasto público total (corriente y de capital) en educación expresado como porcentaje del Producto Interno Bruto (PIB) en un año determinado. El gasto público en educación incluye el gasto del Gobierno en instituciones educativas (públicas y privadas), administración educativa y subsidios o transferencias para entidades privadas (estudiantes/hogares y otras entidades privadas). (Banco Mundial, 2020)
 
-    -   **Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total del recaudo)**
+    -   **Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total del recaudo), variable control**
 
         Esta es nuestra variable control del modelo econométrico que queremos construir pues, al medir el nivel porcentual de impuestos que se le cobran a los ingresos, utilidades y ganancias del capital de las empresas en relación con el recaudo total, es un buen indicador del nivel de progresividad de la tributación en los diferentes países, y esto está directamente relacionado con la desigualdad de estos.
 
         > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
 
-    -   **Inflación, precios al consumidor (% anual)**
+    -   **Inflación, precios al consumidor (% anual), variable control**
 
-        Esta es una variable macroeconómica que mide la erosión del dinero, debido a
-        esto puede afectar sustancialmente los niveles de desigualdad.
+        Esta es una variable macroeconómica que mide la erosión del dinero, debido a esto puede afectar sustancialmente los niveles de desigualdad.
 
         > La inflación medida por el índice de precios al consumidor refleja la variación porcentual anual en el costo para el consumidor medio de adquirir una canasta de bienes y servicios que puede ser fija o variable a intervalos determinados, por ejemplo anualmente. Por lo general se utiliza la fórmula de Laspeyres. (Banco Mundial, 2020)
 
-    -   **PIB per cápita**
+    -   **PIB per cápita, variable control**
 
         El PIB per cápita es el ingreso nacional dividido en el número de personas que conforman la económia, este indicador nos apróxima al nivel de productividad de un país.
 
         > El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. El PIB es la suma del valor agregado bruto de todos los productores residentes en la economía más todo impuesto a los productos, menos todo subsidio no incluido en el valor de los productos. Se calcula sin hacer deducciones por depreciación de bienes manufacturados o por agotamiento y degradación de recursos naturales. Datos en US\$ a precios actuales. (Banco Mundial, 2020)
 
-    -   **Población**
+    -   **Población, variable control**
 
         Esta variable nos indica el número de habitantes por país, esto nos ayuda en nuestro modelo a encontrar si la desigualdad depende del tamaño poblacional.
 
@@ -142,13 +150,22 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
     Las observaciones son los diferentes países del mundo para cada año entre 1960 y 2019, de este modo se encontraron un total 13020 observaciones.
 
+    
+    ```r
+    nrow(base_final)
+    ```
+    
+    ```
+    ## [1] 13020
+    ```
+
 5.  **Tipo de base de datos:**
 
-    Escogimos trabajar con una base de datos de **corte transversal** debido a nuestras capacidades y al gran número de observaciones que pudimos encontrar.
+    Escogimos trabajar con una base de datos de **datos panel,** esto para obtener un gran número de observaciones que apoye la robustez del estudio.
 
 6.  **Período que cubre las bases de datos:**
 
-    El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
+    El periodo para analizar va desde el año 1960 hsata 2019.
 
 ## Bibliografía
 
