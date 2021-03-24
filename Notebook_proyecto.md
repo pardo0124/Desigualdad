@@ -7,22 +7,67 @@ output:
 
 
 ```r
+#install.packages("utf8")
+#install.packages("wbstats")
 library(wbstats)
-GINI<- wb_search("GINI")
-Desigualdad <- wb_data("SI.POV.GINI",country = "all", start_date = 2010)
+#GINI<- wb_search("GINI")
+Desigualdad <- wb_data("SI.POV.GINI",country = "countries_only", start_date = 1960, end_date = 2019)
 
-Taxes<- wb_search("Taxes")
-Progresividad_2010<-wb_data("GC.TAX.YPKG.RV.ZS",country = "all", start_date = 2010)
+#Taxes<- wb_search("Taxes")
+Progresividad<-wb_data("GC.TAX.YPKG.RV.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
 
-waste_in_education<- wb_search("Government expenditure on education")
-Gasto_educ_2010<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2010)
+#waste_in_education<- wb_search("Government expenditure on education")
+Gasto_educ<-wb_data("SE.XPD.TOTL.GD.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
 
-Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
+#INf<- wb_search("Inflation")
+Inflacion <- wb_data("FP.CPI.TOTL.ZG",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#INf<- wb_search("PIB")
+PIB_PER_CAPITA <- wb_data("NY.GDP.PCAP.CD",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#INf<- wb_search("Population")
+Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960, end_date = 2019)
 ```
 
-## Pregunta de investigación:
+
+```r
+library(tidyverse)
+```
+
+```
+## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
+```
+
+```
+## v ggplot2 3.3.3     v purrr   0.3.4
+## v tibble  3.1.0     v dplyr   1.0.5
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.1
+```
+
+```
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
+
+```r
+base <- full_join(Desigualdad,Gasto_educ, by=c("iso3c","date","iso2c","country"))
+
+ base <- full_join(base,Inflacion, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,PIB_PER_CAPITA, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Poblacion, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Progresividad, by=c("iso3c","date","iso2c","country"))
+ 
+base_final=base[,c("iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")]
+names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion","Progresividad")
+```
+
+## Pregunta de investigación e hipótesis:
 
 ¿Cuál es el efecto de la inversión en educación (como % del PIB) sobre la desigualdad (coeficiente Gini) en los países del mundo?
+
+**Hipótesis**: Creemos que existe una relación negativa entre la inversión en educación y el GINI (desigualdad), es decir, que la inversión en educación ayuda a reducir la desigualdad.
 
 ## Bases de datos:
 
@@ -34,19 +79,27 @@ Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
 
     -   **SE.XPD.TOTL.GD.ZS** *(gasto en educación como % del PIB)*
 
+    -   **"FP.CPI.TOTL.ZG"** *(inflación)*
+
+    -   **"NY.GDP.PCAP.CD"** *(PIB per cápita)*
+
+    -   **"SP.POP.TOTL"** *(Población)*
+
 2.  **Entidad que produjo las bases de datos:**
 
     Banco Mundial (base de acceso público).
 
 3.  **Número de variables:**
 
-    Las variables que vamos a utilizar son cuatro, y son las siguientes:
+    Las variables que vamos a utilizar son 9, y son las siguientes:
 
-    -   **País**:
+    -   **País y código**:
 
-        Esta es una variable descriptiva que nos indica el nombre de cada país.
+        Estas son variables descriptivas que identifican los paises del cuales se está tomando cada una de las observaciónes, no existen agregados regionales (sólo países).
 
-    <!-- -->
+    -   **Año:**
+
+        Esta variable nos da la ubicación en el tiempo de cada observación y nos permite hacer un analisis longitudinal.
 
     -   **Coeficiente de Gini**:
 
@@ -66,9 +119,28 @@ Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
 
         > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
 
+    -   **Inflación, precios al consumidor (% anual)**
+
+        Esta es una variable macroeconómica que mide la erosión del dinero, debido a
+        esto puede afectar sustancialmente los niveles de desigualdad.
+
+        > La inflación medida por el índice de precios al consumidor refleja la variación porcentual anual en el costo para el consumidor medio de adquirir una canasta de bienes y servicios que puede ser fija o variable a intervalos determinados, por ejemplo anualmente. Por lo general se utiliza la fórmula de Laspeyres. (Banco Mundial, 2020)
+
+    -   **PIB per cápita**
+
+        El PIB per cápita es el ingreso nacional dividido en el número de personas que conforman la económia, este indicador nos apróxima al nivel de productividad de un país.
+
+        > El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. El PIB es la suma del valor agregado bruto de todos los productores residentes en la economía más todo impuesto a los productos, menos todo subsidio no incluido en el valor de los productos. Se calcula sin hacer deducciones por depreciación de bienes manufacturados o por agotamiento y degradación de recursos naturales. Datos en US\$ a precios actuales. (Banco Mundial, 2020)
+
+    -   **Población**
+
+        Esta variable nos indica el número de habitantes por país, esto nos ayuda en nuestro modelo a encontrar si la desigualdad depende del tamaño poblacional.
+
+        > Total population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. The values shown are midyear estimates. (Banco Mundial, 2020)
+
 4.  **Número de observaciones:**
 
-    A causa de la naturaleza del estudio de corte transversal, estas observaciones son los diferentes países del mundo de los cuales se encontraron datos disponibles, los cuales suman 264 países/observaciones.
+    Las observaciones son los diferentes países del mundo para cada año entre 1960 y 2019, de este modo se encontraron un total 13020 observaciones.
 
 5.  **Tipo de base de datos:**
 
@@ -78,30 +150,6 @@ Gasto_educ_2000<-wb_data("SE.XPD.TOTL.GD.ZS",country = "all", start_date = 2000)
 
     El periodo para analizar es el año 2010 en todas las variables excepto en la variable de gasto en educación, de la cual se va a examinar su comportamiento tanto en el año 2000 y 2010.
 
-## Anexos
-
-
-```r
-Figura1 <- plot(Gasto_educ_2000$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2000", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad") 
-```
-
-![](Notebook_proyecto_files/figure-html/Grafica-1.png)<!-- -->
-
-[^1]
-
-[^1]: Figura 1
-
-
-```r
-Figura2 <- plot(Gasto_educ_2010$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab = "Gasto en educación año 2010", ylab = "Desigualdad año 2010", main = "Educación vs Desigualdad")
-```
-
-![](Notebook_proyecto_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
-
-[^2]
-
-[^2]: Figura 2
-
 ## Bibliografía
 
 -   Banco Mundial (16 de diciembre, 2020). Índice de Gini. [SI.POV.GINI]. Recuperado de [\<https://datos.bancomundial.org/indicator/SI.POV.GINI\>](https://datos.bancomundial.org/indicator/SI.POV.GINI){.uri}
@@ -109,3 +157,15 @@ Figura2 <- plot(Gasto_educ_2010$SE.XPD.TOTL.GD.ZS, Desigualdad$SI.POV.GINI, xlab
 -   Banco Mundial (16 de diciembre, 2020). Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total de impuestos) [GC.TAX.YPKG.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS\>](https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS){.uri}
 
 -   Banco Mundial (16 de diciembre, 2020). Gasto público en educación, total (% del PIB). [SE.XPD.TOTL.GD.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS\>](https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). PIB per cápita (US\$ a precios actuales). [NY.GDP.PCAP.CD]. Recuperado de
+
+    <https://datos.bancomundial.org/indicator/NY.GDP.PCAP.CD>
+
+-   Banco Mundial (16 de diciembre, 2020). Población, total. [SP.POP.TOTL]. Recuperado de
+
+    <https://datos.bancomundial.org/indicator/SP.POP.TOTL>
+
+-   Banco Mundial (16 de diciembre, 2020). Inflación, precios al consumidor (% anual). [FP.CPI.TOTL.ZG]. Recuperado de
+
+    <https://datos.bancomundial.org/indicator/FP.CPI.TOTL.ZG>

@@ -30,15 +30,16 @@ Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960
 ```
 
 ```{r}
-#library(tidyverse)
+library(tidyverse)
 base <- full_join(Desigualdad,Gasto_educ, by=c("iso3c","date","iso2c","country"))
+
  base <- full_join(base,Inflacion, by=c("iso3c","date","iso2c","country"))
  base <- full_join(base,PIB_PER_CAPITA, by=c("iso3c","date","iso2c","country"))
  base <- full_join(base,Poblacion, by=c("iso3c","date","iso2c","country"))
  base <- full_join(base,Progresividad, by=c("iso3c","date","iso2c","country"))
  
 base_final=base[,c("iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")]
-names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion","Progresividad")
+names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion","Progresividad")
 
 ```
 
@@ -70,11 +71,15 @@ names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflac
 
 3.  **Número de variables:**
 
-    Las variables que vamos a utilizar son 6, y son las siguientes:
+    Las variables que vamos a utilizar son 9, y son las siguientes:
 
-    -   **País**:
+    -   **País y código**:
 
-        Esta es una variable descriptiva que nos indica el nombre de cada país.
+        Estas son variables descriptivas que identifican los paises del cuales se está tomando cada una de las observaciónes, no existen agregados regionales (sólo países).
+
+    -   **Año:**
+
+        Esta variable nos da la ubicación en el tiempo de cada observación y nos permite hacer un analisis longitudinal.
 
     -   **Coeficiente de Gini**:
 
@@ -92,15 +97,30 @@ names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflac
 
         Esta es nuestra variable control del modelo econométrico que queremos construir pues, al medir el nivel porcentual de impuestos que se le cobran a los ingresos, utilidades y ganancias del capital de las empresas en relación con el recaudo total, es un buen indicador del nivel de progresividad de la tributación en los diferentes países, y esto está directamente relacionado con la desigualdad de estos.
 
-            > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
+        > Los impuestos sobre la renta, las utilidades y las ganancias de capital se gravan sobre el ingreso neto real o presunto de las personas, sobre las utilidades de las sociedades y empresas, y sobre las ganancias de capital, realizadas o no, la tierra, valores y otros activos. Los pagos intragubernamentales se eliminan en la consolidación. (Banco Mundial, 2020)
 
-    -   
+    -   **Inflación, precios al consumidor (% anual)**
 
-    -   
+        Esta es una variable macroeconómica que mide la erosión del dinero, debido a
+        esto puede afectar sustancialmente los niveles de desigualdad.
+
+        > La inflación medida por el índice de precios al consumidor refleja la variación porcentual anual en el costo para el consumidor medio de adquirir una canasta de bienes y servicios que puede ser fija o variable a intervalos determinados, por ejemplo anualmente. Por lo general se utiliza la fórmula de Laspeyres. (Banco Mundial, 2020)
+
+    -   **PIB per cápita**
+
+        El PIB per cápita es el ingreso nacional dividido en el número de personas que conforman la económia, este indicador nos apróxima al nivel de productividad de un país.
+
+        > El PIB per cápita es el producto interno bruto dividido por la población a mitad de año. El PIB es la suma del valor agregado bruto de todos los productores residentes en la economía más todo impuesto a los productos, menos todo subsidio no incluido en el valor de los productos. Se calcula sin hacer deducciones por depreciación de bienes manufacturados o por agotamiento y degradación de recursos naturales. Datos en US\$ a precios actuales. (Banco Mundial, 2020)
+
+    -   **Población**
+
+        Esta variable nos indica el número de habitantes por país, esto nos ayuda en nuestro modelo a encontrar si la desigualdad depende del tamaño poblacional.
+
+        > Total population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. The values shown are midyear estimates. (Banco Mundial, 2020)
 
 4.  **Número de observaciones:**
 
-    A causa de la naturaleza del estudio de corte transversal, estas observaciones son los diferentes países del mundo de los cuales se encontraron datos disponibles, los cuales suman 264 países/observaciones.
+    Las observaciones son los diferentes países del mundo para cada año entre 1960 y 2019, de este modo se encontraron un total 13020 observaciones.
 
 5.  **Tipo de base de datos:**
 
@@ -117,3 +137,15 @@ names(base_final)=c("iso3c","country","date","Desigualdad", "Gasto_educ","Inflac
 -   Banco Mundial (16 de diciembre, 2020). Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total de impuestos) [GC.TAX.YPKG.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS\>](https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS){.uri}
 
 -   Banco Mundial (16 de diciembre, 2020). Gasto público en educación, total (% del PIB). [SE.XPD.TOTL.GD.ZS]. Recuperado de [\<https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS\>](https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). PIB per cápita (US\$ a precios actuales). [NY.GDP.PCAP.CD]. Recuperado de
+
+    <https://datos.bancomundial.org/indicator/NY.GDP.PCAP.CD>
+
+-   Banco Mundial (16 de diciembre, 2020). Población, total. [SP.POP.TOTL]. Recuperado de
+
+    <https://datos.bancomundial.org/indicator/SP.POP.TOTL>
+
+-   Banco Mundial (16 de diciembre, 2020). Inflación, precios al consumidor (% anual). [FP.CPI.TOTL.ZG]. Recuperado de
+
+    <https://datos.bancomundial.org/indicator/FP.CPI.TOTL.ZG>
