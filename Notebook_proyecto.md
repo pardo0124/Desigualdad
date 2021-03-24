@@ -1,5 +1,6 @@
 ---
-title: "R Notebook"
+title: "Desigualdad"
+author: "Nicolás Pardo, Daniel Urango y Sebastián Morales"
 output:
   html_document: 
     keep_md: yes
@@ -166,6 +167,15 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 6.  **Período que cubre las bases de datos:**
 
     El periodo para analizar va desde el año 1960 hsata 2019.
+
+## Plan de análisis:
+
+Se va a trabajar la metodología de **datos panel**, la cual consiste en realizar un estudio estadístico a lo largo del tiempo, sobre el comportamiento de las variables escogidas para los diferentes países, los pasos de la metodología a seguir son:
+
+1.  Estadística descriptiva.
+2.  Analizar la heterogeneidad de los datos entre países y a través de los años.
+3.  Observar los efectos fijos de los países, años, países-años y años-países.
+4.  Observar los efectos aleatorios.
 
 ## Bibliografía
 

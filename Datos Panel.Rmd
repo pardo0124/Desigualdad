@@ -1,0 +1,181 @@
+---
+title: "Datos Panel"
+author: "Santiago Tellez Cañas"
+output: 
+  html_notebook:
+    toc: yes
+    toc_float: yes
+---
+
+
+## Activar paquetes 
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(lubridate)
+library(WDI)
+library(effects)
+library(stargazer)
+library(scales)
+
+options(scipen = 999)
+```
+
+## Limpiar espacio de trabajo
+
+```{r}
+rm(list = ls())
+```
+
+# Cargar datos
+
+```{r}
+pib <- WDI(country = c("US", "CA", "GB", "DE", "CN", 
+                       "JP", "SG", "IL", "CO"), 
+           indicator = c("NY.GDP.PCAP.CD", 
+                         "NY.GDP.MKTP.CD", 
+                         "VC.IHR.PSRC.P5"), 
+           start = 1960, end = 2018)
+```
+
+
+
+## Datos Panel
+
+### Exploración:
+```{r}
+pib %>% 
+  arrange(year) %>% 
+  head()
+pib %>% 
+  arrange(year) %>% 
+  tail()
+```
+Gráficamente:
+```{r}
+ggplot(pib, aes(year, pib_percapita, color = country2, 
+                linetype = country2)) + 
+  geom_line() + 
+  scale_y_continuous(label = dollar)
+```
+
+```{r}
+ggplot(pib, aes(year, pib_percapita)) + 
+  geom_line() + 
+  scale_y_continuous(label = dollar) + 
+  facet_wrap(vars(country2))
+```
+
+### Heterogeneidad dentro de países 
+
+```{r}
+pib_paises <- pib %>% 
+  group_by(country2) %>% 
+  summarize(media = mean(pib_percapita, na.rm = TRUE), 
+            sd = sd(pib_percapita, na.rm = TRUE), 
+            n = n(), 
+            ee = sd/sqrt(n), 
+            me = qt(p = 0.025, df = n-1) * ee, 
+            li = media - me,
+            ls = media + me)
+```
+
+```{r}
+ggplot(pib_paises, aes(x = country2, y=media,  ymin = li, ymax = ls)) + 
+  geom_point() + 
+  geom_line() + 
+  geom_errorbar() + 
+  scale_y_continuous(labels = dollar)
+```
+
+### Heterogeneidad dentro de años 
+
+```{r}
+pib_anos <- pib %>% 
+  group_by(year) %>% 
+  summarize(media = mean(pib_percapita, na.rm = TRUE), 
+            sd = sd(pib_percapita, na.rm = TRUE), 
+            n = n(), 
+            ee = sd/sqrt(n), 
+            me = qt(p = 0.025, df = n-1) * ee, 
+            li = media - me,
+            ls = media + me)
+```
+
+```{r}
+ggplot(pib_anos, aes(x = year, y=media, ymin = li, ymax = ls)) + 
+  geom_errorbar() + 
+  geom_line() +
+  geom_point() + 
+  scale_y_continuous(labels = dollar)
+```
+
+¿Cuál es la relación entre el número de homicidios por 100,000 habitantes y el PIB per capita?
+
+```{r}
+ggplot(data = pib %>% filter(between(year, 2012, 2017)), 
+       mapping = aes(x = homicidios, y = pib_percapita, color = country2)) + 
+  geom_point() + 
+  facet_wrap(vars(year))
+```
+
+### Numéricamente
+
+```{r}
+mco <- lm(pib_percapita ~ homicidios, data = pib)
+summary(mco)
+
+
+```
+
+Efectos fijos de país:
+
+```{r}
+ef_pais <- lm(pib_percapita ~ homicidios + country2, data = pib)
+summary(ef_pais)
+```
+
+Efectos fijos de año:
+
+```{r}
+ef_ano <- lm(pib_percapita ~ homicidios + factor(year), data = pib)
+summary(ef_ano)
+```
+
+Efectos fijos de dos vías:
+
+```{r}
+ef_ano <- lm(pib_percapita ~ homicidios + factor(year) + country2, data = pib)
+summary(ef_ano)
+```
+
+
+```{r}
+library(plm)
+efectos_fijos <- plm(pib_percapita ~ homicidios, 
+                     data = pib, 
+                     index = c("country2", "year"), 
+                     model = c("within"), 
+                     effect = c("twoway"))
+r.squared(efectos_fijos)
+summary(efectos_fijos)
+```
+
+Efectos aleatorios:
+
+```{r}
+efectos_aleatorios <- plm(pib_percapita ~ homicidios, 
+                     data = pib, 
+                     index = c("country2", "year"), 
+                     model = c("random"), 
+                     effect = c("twoway"))
+summary.plm.list(efectos_aleatorios)
+```
+
+```{r}
+phtest(efectos_fijos, efectos_aleatorios)
+```
+
+Para otros análisis y pruebas ver el siguiente documento:
+
+https://www.princeton.edu/~otorres/Panel101R.pdf
