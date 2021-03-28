@@ -7,8 +7,7 @@ output:
     toc_float: yes
 ---
 
-
-## Activar paquetes 
+## Activar paquetes
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
@@ -38,11 +37,10 @@ pib <- WDI(country = c("US", "CA", "GB", "DE", "CN",
            start = 1960, end = 2018)
 ```
 
-
-
 ## Datos Panel
 
 ### Exploración:
+
 ```{r}
 pib %>% 
   arrange(year) %>% 
@@ -51,7 +49,9 @@ pib %>%
   arrange(year) %>% 
   tail()
 ```
+
 Gráficamente:
+
 ```{r}
 ggplot(pib, aes(year, pib_percapita, color = country2, 
                 linetype = country2)) + 
@@ -66,7 +66,7 @@ ggplot(pib, aes(year, pib_percapita)) +
   facet_wrap(vars(country2))
 ```
 
-### Heterogeneidad dentro de países 
+### Heterogeneidad dentro de países
 
 ```{r}
 pib_paises <- pib %>% 
@@ -88,7 +88,7 @@ ggplot(pib_paises, aes(x = country2, y=media,  ymin = li, ymax = ls)) +
   scale_y_continuous(labels = dollar)
 ```
 
-### Heterogeneidad dentro de años 
+### Heterogeneidad dentro de años
 
 ```{r}
 pib_anos <- pib %>% 
@@ -149,7 +149,6 @@ ef_ano <- lm(pib_percapita ~ homicidios + factor(year) + country2, data = pib)
 summary(ef_ano)
 ```
 
-
 ```{r}
 library(plm)
 efectos_fijos <- plm(pib_percapita ~ homicidios, 
@@ -178,4 +177,4 @@ phtest(efectos_fijos, efectos_aleatorios)
 
 Para otros análisis y pruebas ver el siguiente documento:
 
-https://www.princeton.edu/~otorres/Panel101R.pdf
+<https://www.princeton.edu/~otorres/Panel101R.pdf>
