@@ -1,70 +1,12 @@
 ---
-title: "Desigualdad"
+title: "Proyecto, 2da entrega"
 author: "Nicolás Pardo, Daniel Urango y Sebastián Morales"
 output:
   html_document: 
     keep_md: yes
 ---
 
-
-```r
-#install.packages("utf8")
-#install.packages("wbstats")
-library(wbstats)
-#GINI<- wb_search("GINI")
-Desigualdad <- wb_data("SI.POV.GINI",country = "countries_only", start_date = 1960, end_date = 2019)
-
-#Taxes<- wb_search("Taxes")
-Progresividad<-wb_data("GC.TAX.YPKG.RV.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
-
-#waste_in_education<- wb_search("Government expenditure on education")
-Gasto_educ<-wb_data("SE.XPD.TOTL.GD.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
-
-#INf<- wb_search("Inflation")
-Inflacion <- wb_data("FP.CPI.TOTL.ZG",country = "countries_only", start_date = 1960, end_date = 2019)
-
-#INf<- wb_search("PIB")
-PIB_PER_CAPITA <- wb_data("NY.GDP.PCAP.CD",country = "countries_only", start_date = 1960, end_date = 2019)
-
-#INf<- wb_search("Population")
-Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960, end_date = 2019)
-```
-
-
-```r
-library(tidyverse)
-```
-
-```
-## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
-```
-
-```
-## v ggplot2 3.3.3     v purrr   0.3.4
-## v tibble  3.1.0     v dplyr   1.0.5
-## v tidyr   1.1.3     v stringr 1.4.0
-## v readr   1.4.0     v forcats 0.5.1
-```
-
-```
-## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-```
-
-```r
-base <- full_join(Desigualdad,Gasto_educ, by=c("iso3c","date","iso2c","country"))
-
- base <- full_join(base,Inflacion, by=c("iso3c","date","iso2c","country"))
- base <- full_join(base,PIB_PER_CAPITA, by=c("iso3c","date","iso2c","country"))
- base <- full_join(base,Poblacion, by=c("iso3c","date","iso2c","country"))
- base <- full_join(base,Progresividad, by=c("iso3c","date","iso2c","country"))
- 
-base_final=base[,c("iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")]
-names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion","Progresividad")
-```
-
-## Pregunta de investigación e hipótesis:
+## Pregunta de investigación e hipótesis
 
 ¿Cuál es el efecto de la inversión en educación (como % del PIB) sobre la desigualdad (coeficiente Gini) en los países del mundo?
 
@@ -79,9 +21,7 @@ las recurrentes crisis económicas y sociales, principalmente, en países
 subdesarrollados (García et al, 1998) o
 por el interés renovado en estudiar la distribución de ingresos por la aparición
 de nuevos conjuntos de datos y nuevos avances en las teorías económicos de
-crecimiento económico (De Gregorio & Lee, 1999), entre otras.
-
- 
+crecimiento económico (De Gregorio & Lee, 1999), entre otras. 
 
 Igualmente, la desigualdad como fenómeno social y
 económico ha cobrado más relevancia no solo en el contexto académico sino en el
@@ -104,8 +44,6 @@ vulnerables e inseguras ante un entorno desigual, incierto y volatil que no
 necesariamente permite que sus generaciones futuras tengan un acceso y
 posterior proceso educativo satisfactorio, por ende, no se garantiza un proceso
 educativo exitoso (OEA, 2006).
-
- 
 
 Por otro lado, diversas organizaciones y
 centros académicos han estudiado e intentado identificar las causas del
@@ -410,7 +348,65 @@ subdesarrollados, porque estos países se destina la mayor parte del gasto total
 de educación a la educación superior, ignorando la inversión en niveles
 educativos previos a la educación superior (Santambrogio, 2018).
 
-## Bases de datos:
+## Base de datos
+
+
+```r
+#install.packages("utf8")
+#install.packages("wbstats")
+library(wbstats)
+#GINI<- wb_search("GINI")
+Desigualdad <- wb_data("SI.POV.GINI",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#Taxes<- wb_search("Taxes")
+Progresividad<-wb_data("GC.TAX.YPKG.RV.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#waste_in_education<- wb_search("Government expenditure on education")
+Gasto_educ<-wb_data("SE.XPD.TOTL.GD.ZS",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#INf<- wb_search("Inflation")
+Inflacion <- wb_data("FP.CPI.TOTL.ZG",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#INf<- wb_search("PIB")
+PIB_PER_CAPITA <- wb_data("NY.GDP.PCAP.CD",country = "countries_only", start_date = 1960, end_date = 2019)
+
+#INf<- wb_search("Population")
+Poblacion <- wb_data("SP.POP.TOTL",country = "countries_only", start_date = 1960, end_date = 2019)
+```
+
+
+```r
+library(tidyverse)
+```
+
+```
+## -- Attaching packages --------------------------------------- tidyverse 1.3.0 --
+```
+
+```
+## v ggplot2 3.3.3     v purrr   0.3.4
+## v tibble  3.1.0     v dplyr   1.0.5
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.1
+```
+
+```
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+```
+
+```r
+base <- full_join(Desigualdad,Gasto_educ, by=c("iso3c","date","iso2c","country"))
+
+ base <- full_join(base,Inflacion, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,PIB_PER_CAPITA, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Poblacion, by=c("iso3c","date","iso2c","country"))
+ base <- full_join(base,Progresividad, by=c("iso3c","date","iso2c","country"))
+ 
+base_final=base[,c("iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")]
+names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion","Progresividad")
+```
 
 1.  **Nombres:**
 
@@ -508,7 +504,7 @@ educativos previos a la educación superior (Santambrogio, 2018).
 
     El periodo para analizar va desde el año 1960 hsata el 2019, para un total de 60 años.
 
-## Plan de análisis:
+## Plan de análisis
 
 Se va a trabajar la metodología de **datos panel**, la cual consiste en realizar un estudio estadístico a lo largo del tiempo, sobre el comportamiento de las variables escogidas para los diferentes países, los pasos de la metodología a seguir son:
 
@@ -536,3 +532,35 @@ Se va a trabajar la metodología de **datos panel**, la cual consiste en realiza
 -   Banco Mundial (16 de diciembre, 2020). Inflación, precios al consumidor (% anual). [FP.CPI.TOTL.ZG]. Recuperado de
 
     <https://datos.bancomundial.org/indicator/FP.CPI.TOTL.ZG>
+
+-   De Gregorio, J., &
+    Lee, J.-W. (junio de 1999). EDUCATION AND INCOME DISTRIBUTION: NEW EVIDENCE FROM
+    CROSS-COUNTRY DATA. *SERIE ECONOMÍA*(55), 1-41. Obtenido de
+    <https://www.researchgate.net/profile/Jose-De-Gregorio/publication/4738379_Education_and_Income_Distribution_New_Evidence_from_Cross-country_Data/links/55bb6e7b08aed621de0d9419/Education-and-Income-Distribution-New-Evidence-from-Cross-country-Data.pdf>
+
+-   García, H., Bracho, T.,
+    Irrabola, M., Rodríguez, R., & Schmelkes, S. (junio de 1998). Educación y
+    desigualdad social. *Revista Mexicana de Investigación Educativa, 3*(6),
+    317-345. Obtenido de <https://www.redalyc.org/articulo.oa?id=14000607>
+
+-   OEA. (2006). *Educación y desigualdad social.*
+    Organizacion de Estados Americanos, Ministerio de Educación, Ciencia y
+    Tecnología de Argentina., Buenos Aires, Buenos Aires.
+
+-   OXFAM. (2019). *EL PODER DE LA EDUCACIÓN EN LA LUCHA CONTRA LA DESIGUALDAD.* Oxford: OXFAM GB.
+    doi:10.21201/2019.4931
+
+-   Santambrogio, F. O. (2018). *Efectos del gasto en educación
+    sobre la desigualdad de ingresos en Chile y el mundo.* Memoria, PONTIFICIA
+    UNIVERSIDAD CATÓLICA DE VALPARAÍSO , Valparaiso, Valparaíso. Obtenido de
+    <http://opac.pucv.cl/pucv_txt/txt-6500/UCC6801_01.pdf>
+
+
+
+
+
+
+
+
+
+

@@ -1,22 +1,12 @@
 ---
-title: "Desigualdad"
+title: "Proyecto, 2da entrega"
 author: "Nicolás Pardo, Daniel Urango y Sebastián Morales"
 output:
   html_document: 
     keep_md: yes
 ---
 
-```{r}
-
-
-```
-
-```{r}
-
-
-```
-
-## Pregunta de investigación e hipótesis:
+## Pregunta de investigación e hipótesis
 
 ¿Cuál es el efecto de la inversión en educación (como % del PIB) sobre la desigualdad (coeficiente Gini) en los países del mundo?
 
@@ -31,9 +21,7 @@ las recurrentes crisis económicas y sociales, principalmente, en países
 subdesarrollados (García et al, 1998) o
 por el interés renovado en estudiar la distribución de ingresos por la aparición
 de nuevos conjuntos de datos y nuevos avances en las teorías económicos de
-crecimiento económico (De Gregorio & Lee, 1999), entre otras.
-
- 
+crecimiento económico (De Gregorio & Lee, 1999), entre otras. 
 
 Igualmente, la desigualdad como fenómeno social y
 económico ha cobrado más relevancia no solo en el contexto académico sino en el
@@ -56,8 +44,6 @@ vulnerables e inseguras ante un entorno desigual, incierto y volatil que no
 necesariamente permite que sus generaciones futuras tengan un acceso y
 posterior proceso educativo satisfactorio, por ende, no se garantiza un proceso
 educativo exitoso (OEA, 2006).
-
- 
 
 Por otro lado, diversas organizaciones y
 centros académicos han estudiado e intentado identificar las causas del
@@ -486,7 +472,7 @@ names(base_final)=c("Código","Pais","Año","Desigualdad", "Gasto_educ","Inflaci
 
     El periodo para analizar va desde el año 1960 hsata el 2019, para un total de 60 años.
 
-## Plan de análisis:
+## Plan de análisis
 
 Se va a trabajar la metodología de **datos panel**, la cual consiste en realizar un estudio estadístico a lo largo del tiempo, sobre el comportamiento de las variables escogidas para los diferentes países, los pasos de la metodología a seguir son:
 
