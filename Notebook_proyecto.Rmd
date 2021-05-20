@@ -15,339 +15,61 @@ output:
 
 ## Revisión de literatura
 
-Para empezar, existe un progresivo interés en las últimas
-décadas en el estudio de las determinantes y la dinámica de la creciente
-desigualdad en las economías contemporáneas por diferentes motivos, ya sea por
-las recurrentes crisis económicas y sociales, principalmente, en países
-subdesarrollados (García et al, 1998) o
-por el interés renovado en estudiar la distribución de ingresos por la aparición
-de nuevos conjuntos de datos y nuevos avances en las teorías económicos de
-crecimiento económico (De Gregorio & Lee, 1999), entre otras. 
+Para empezar, existe un progresivo interés en las últimas décadas en el estudio de las determinantes y la dinámica de la creciente desigualdad en las economías contemporáneas por diferentes motivos, ya sea por las recurrentes crisis económicas y sociales, principalmente, en países subdesarrollados (García et al, 1998) o por el interés renovado en estudiar la distribución de ingresos por la aparición de nuevos conjuntos de datos y nuevos avances en las teorías económicos de crecimiento económico (De Gregorio & Lee, 1999), entre otras. 
 
-Igualmente, la desigualdad como fenómeno social y
-económico ha cobrado más relevancia no solo en el contexto académico sino en el
-contexto político y social, debido a los efectos nocivos que causa a las
-sociedades, en particular, a las sociedades de los países subdesarrollados como
-por ejemplo, los países de Latinoamérica y el Caribe o del continente africano
-donde la desigualdad  en la distribución
-de ingresos se ha incrementado de forma sistemática en las últimas décadas (De Gregorio & Lee, 1999). Asimismo, la
-creciente desigualdad en las sociedades actuales acentúa las diferencias
-sociales, aumenta la población en condición de pobreza extrema (García et al, 1998), crea procesos de exclusion
-social, aumenta la brecha entre ricos y pobres (OEA, 2006), socava la cohesion
-social, aumenta la brecha de género y debilita las instituciones democráticas (OXFAM,
-2019).
-De igual modo, en el ámbito educativo, hay un debilitamiento de la compleja
-articulación del docente- alumno como actores sociales que sinergizan la
-instituciones de la familia y la institucion educativa y tambien, sinergizan la
-dimension social con la dimension educativa, donde un entorno de creciente
-desigualdad las familias de las clases medios y bajos recursos son más
-vulnerables e inseguras ante un entorno desigual, incierto y volatil que no
-necesariamente permite que sus generaciones futuras tengan un acceso y
-posterior proceso educativo satisfactorio, por ende, no se garantiza un proceso
-educativo exitoso (OEA, 2006).
+Igualmente, la desigualdad como fenómeno social y económico ha cobrado más relevancia no solo en el contexto académico sino en el contexto político y social, debido a los efectos nocivos que causa a las sociedades, en particular, a las sociedades de los países subdesarrollados como por ejemplo, los países de Latinoamérica y el Caribe o del continente africano donde la desigualdad  en la distribución de ingresos se ha incrementado de forma sistemática en las últimas décadas (De Gregorio & Lee, 1999). Asimismo, la creciente desigualdad en las sociedades actuales acentúa las diferencias sociales, aumenta la población en condición de pobreza extrema (García et al, 1998), crea procesos de exclusion social, aumenta la brecha entre ricos y pobres (OEA, 2006), socava la cohesion social, aumenta la brecha de género y debilita las instituciones democráticas (OXFAM, 2019). De igual modo, en el ámbito educativo, hay un debilitamiento de la compleja articulación del docente- alumno como actores sociales que sinergizan la instituciones de la familia y la institucion educativa y tambien, sinergizan la dimension social con la dimension educativa, donde un entorno de creciente desigualdad las familias de las clases medios y bajos recursos son más vulnerables e inseguras ante un entorno desigual, incierto y volatil que no necesariamente permite que sus generaciones futuras tengan un acceso y posterior proceso educativo satisfactorio, por ende, no se garantiza un proceso educativo exitoso (OEA, 2006).
 
-Por otro lado, diversas organizaciones y
-centros académicos han estudiado e intentado identificar las causas del
-fenómeno de la creciente desigualdad en las economías actuales, en especial, de
-economías subdesarrolladas. En efecto, la Organización de Estados Americanos
-(OEA) junto al ministerio de educación de Argentina, trata de explicar la
-creciente desigualdad en países latinoamericanos mediante el fenómeno de
-apertura económica. En detalle, a mitad del siglo XX muchas economías - en
-especial, latinoamericanas - se caracterizaron por tener un estado
-intervencionista con fuerte responsabilidad social y un mercado del trabajo
-regulado que garantizaba inserción social a los asalariados como viejo modelo
-de integración, sin renunciar al compromiso de libertad individual y de mercado
-(OEA, 2006).
+Por otro lado, diversas organizaciones y centros académicos han estudiado e intentado identificar las causas del fenómeno de la creciente desigualdad en las economías actuales, en especial, de economías subdesarrolladas. En efecto, la Organización de Estados Americanos (OEA) junto al ministerio de educación de Argentina, trata de explicar la creciente desigualdad en países latinoamericanos mediante el fenómeno de apertura económica. En detalle, a mitad del siglo XX muchas economías - en especial, latinoamericanas - se caracterizaron por tener un estado intervencionista con fuerte responsabilidad social y un mercado del trabajo regulado que garantizaba inserción social a los asalariados como viejo modelo de integración, sin renunciar al compromiso de libertad individual y de mercado (OEA, 2006).
 
-Sin embargo, en la década de los noventa,
-en muchos países subdesarrollados se
-implementaron políticas con clara redefinición del lugar del estado frente a
-procesos económicos y sociales basadas en el consenso de Washington y los
-pilares del libre mercado, en otras palabras, "... el desplazamiento de
-mercados regulados por los Estados hacia mercados regidos por el libre
-funcionamiento de la oferta y la demanda." (OEA, 2006).
+Sin embargo, en la década de los noventa, en muchos países subdesarrollados se implementaron políticas con clara redefinición del lugar del estado frente a procesos económicos y sociales basadas en el consenso de Washington y los pilares del libre mercado, en otras palabras, "... el desplazamiento de mercados regulados por los Estados hacia mercados regidos por el libre funcionamiento de la oferta y la demanda." (OEA, 2006).
 
-En consecuencia, en
-muchas economías alrededor del globo se produjeron fuertes procesos de
-desregulación desde mercados financieros hasta mercados de bienes y servicios,
-apertura de fronteras nacionales, así como, fuerte proceso de privatización de
-empresas y servicios públicos (OEA, 2006). A causa de estas
-políticas neoliberales y de apertura económica, a pesar de un favorable
-crecimiento económico inicial y un bienestar económico transitorio en materia
-de modernidad y crecimiento económico, posteriormente, aparecieron
-problemáticas sociales y económicos, como el incremento de la desocupación, la
-creciente desigualdad social, el deterioro de los servicios públicos y un
-debilitamiento del entramado social, que permitieron mostrar que el crecimiento
-económico no se traducía en desarrollo social sino que promovía estos
-malestares sociales (OEA, 2006).
+En consecuencia, en muchas economías alrededor del globo se produjeron fuertes procesos de desregulación desde mercados financieros hasta mercados de bienes y servicios, apertura de fronteras nacionales, así como, fuerte proceso de privatización de empresas y servicios públicos (OEA, 2006). A causa de estas políticas neoliberales y de apertura económica, a pesar de un favorable crecimiento económico inicial y un bienestar económico transitorio en materia de modernidad y crecimiento económico, posteriormente, aparecieron problemáticas sociales y económicos, como el incremento de la desocupación, la creciente desigualdad social, el deterioro de los servicios públicos y un debilitamiento del entramado social, que permitieron mostrar que el crecimiento económico no se traducía en desarrollo social sino que promovía estos malestares sociales (OEA, 2006).
 
-Por otra parte, autores como Jaumotte y
-otros en un estudio de 51 países con uso de datos panel desde 1981 hasta 2003,
-arguyen que la globalización (en este caso, el proceso de apertura) tiene un
-efecto limitado sobre la desigualdad debido a que existen tendencias
-compensatorias de la globalización sobre la desigualdad, en especial, economías
-desarrolladas. A saber, la globalización de comercio se asocia con reducción de
-la desigualdad de ingresos, y por el otro lado, la globalización financiera, sobre
-todo la inversión extranjera directa, se asocia con un aumento de la
-desigualdad de ingresos, entonces, las dos tendencias se compensan y el impacto
-de la globalización es más limitado sobre la desigualdad. De hecho, Jaumotte
-expresa que la desigualdad, principalmente, en países desarrollados se atribuye
-al impacto del cambio tecnológico (Santambrogio, 2018).
+Por otra parte, autores como Jaumotte y otros en un estudio de 51 países con uso de datos panel desde 1981 hasta 2003, arguyen que la globalización (en este caso, el proceso de apertura) tiene un efecto limitado sobre la desigualdad debido a que existen tendencias compensatorias de la globalización sobre la desigualdad, en especial, economías desarrolladas. A saber, la globalización de comercio se asocia con reducción de la desigualdad de ingresos, y por el otro lado, la globalización financiera, sobre todo la inversión extranjera directa, se asocia con un aumento de la desigualdad de ingresos, entonces, las dos tendencias se compensan y el impacto de la globalización es más limitado sobre la desigualdad. De hecho, Jaumotte expresa que la desigualdad, principalmente, en países desarrollados se atribuye al impacto del cambio tecnológico (Santambrogio, 2018).
 
-A causa de la preocupante problemática de
-la creciente desigualdad alrededor del mundo, muchos expertos y organizaciones
-estudian los principales factores que afectan a la desigualdad y su aplicación
-en las políticas económicas para afrontar la desigualdad y sus consecuencias.
-Uno de estos factores determinantes en la reducción de la desigualdad es el
-gasto del gobierno como expresan De Gregorio y Lee "... el gasto social
-contribuye a una distribución más equitativa del ingreso." (De Gregorio
-& Lee, 1999)
-y, sin lugar a duda, la literatura enfatiza la educación como uno de los
-principales factores para reducir la desigualdad en la distribución de ingresos
-(De Gregorio & Lee, 1999); de hecho, "Los
-formuladores de política suelen justificar un mayor gasto en educación como
-herramienta muy eficaz para reducir la desigualdad de ingresos..." (De Gregorio
-& Lee, 1999)
+A causa de la preocupante problemática de la creciente desigualdad alrededor del mundo, muchos expertos y organizaciones estudian los principales factores que afectan a la desigualdad y su aplicación en las políticas económicas para afrontar la desigualdad y sus consecuencias. Uno de estos factores determinantes en la reducción de la desigualdad es el gasto del gobierno como expresan De Gregorio y Lee "... el gasto social contribuye a una distribución más equitativa del ingreso." (De Gregorio & Lee, 1999) y, sin lugar a duda, la literatura enfatiza la educación como uno de los principales factores para reducir la desigualdad en la distribución de ingresos (De Gregorio & Lee, 1999); de hecho, "Los formuladores de política suelen justificar un mayor gasto en educación como herramienta muy eficaz para reducir la desigualdad de ingresos..." (De Gregorio & Lee, 1999)
 
-En suma, la reconocida organización no
-gubernamental OXFAM expresa que la desigualdad como fenómeno social no es
-inevitable, sino resultado de las decisiones políticas que los gobiernos y las
-organizaciones internacionales toman, por tanto, es una elección política (OXFAM, 2019), por ejemplo, la
-explicación anterior de las decisiones políticas basadas en el consenso de
-Washington y perspectiva neoliberal mostrada por la OEA para explicar la
-creciente desigualdad en economías subdesarrolladas. De igual forma, la OXFAM
-expresa que hay consenso de diferentes expertos que reflejan que la desigualdad
-extrema es evitable si se usan políticas adecuadas y medidas concretas, donde
-la educación tiene un poder incomparable para equilibrar las oportunidades,
-contribuir a cerrar las brechas existentes y acercar a las personas entre sí (OXFAM, 2019).
+En suma, la reconocida organización no gubernamental OXFAM expresa que la desigualdad como fenómeno social no es inevitable, sino resultado de las decisiones políticas que los gobiernos y las organizaciones internacionales toman, por tanto, es una elección política (OXFAM, 2019), por ejemplo, la explicación anterior de las decisiones políticas basadas en el consenso de Washington y perspectiva neoliberal mostrada por la OEA para explicar la creciente desigualdad en economías subdesarrolladas. De igual forma, la OXFAM expresa que hay consenso de diferentes expertos que reflejan que la desigualdad extrema es evitable si se usan políticas adecuadas y medidas concretas, donde la educación tiene un poder incomparable para equilibrar las oportunidades, contribuir a cerrar las brechas existentes y acercar a las personas entre sí (OXFAM, 2019).
 
-Más aun, según la OXFAM la educación
-equitativa tiene gran poder igualador en las sociedades y beneficios
-invaluables e incalculables en el desarrollo y bienestar social. En primer
-lugar, contribuye a cerrar la brecha entre los ricos y los pobres por que la
-educación pública, universal y de calidad puede alcanzar una mayor igualdad
-social, donde los gobierno pueden evitar que las familias no acomodadas tengan
-que asumir un mayor costo para un buen servicio de educación al ser el
-beneficio financiero proporcionalmente mucho mayor para las familias pobres (OXFAM, 2019).
+Más aun, según la OXFAM la educación equitativa tiene gran poder igualador en las sociedades y beneficios invaluables e incalculables en el desarrollo y bienestar social. En primer lugar, contribuye a cerrar la brecha entre los ricos y los pobres por que la educación pública, universal y de calidad puede alcanzar una mayor igualdad social, donde los gobierno pueden evitar que las familias no acomodadas tengan que asumir un mayor costo para un buen servicio de educación al ser el beneficio financiero proporcionalmente mucho mayor para las familias pobres (OXFAM, 2019).
 
-En segundo lugar, el hecho de cerrar la
-brecha entre rico y pobres fomenta la cohesión social, ya que los centros
-educativos se convierten en un espacio donde los alumnos ricos y pobres formen
-relaciones de amistad, por consiguiente, se puede derribar la barrera de la
-desigualdad, desafiar las reglas y estereotipos que perpetúan la desigualdad
-económica, promover la movilidad social y dar herramientas a los jóvenes para
-construir sociedades más equitativas y justas (OXFAM, 2019).
+En segundo lugar, el hecho de cerrar la brecha entre rico y pobres fomenta la cohesión social, ya que los centros educativos se convierten en un espacio donde los alumnos ricos y pobres formen relaciones de amistad, por consiguiente, se puede derribar la barrera de la desigualdad, desafiar las reglas y estereotipos que perpetúan la desigualdad económica, promover la movilidad social y dar herramientas a los jóvenes para construir sociedades más equitativas y justas (OXFAM, 2019).
 
-En tercer lugar, la educación brinda
-herramientas como el pensamiento crítico y social a las personas para ejercer
-su derecho a la igualdad de oportunidades, afectar las estructuras y políticas
-que afectan a su vida y tener mayor participación en asuntos relacionados con
-la política y la sociedad civil, de ahí, que la educación estimula a las
-personas a tener una sociedad más democrática (OXFAM, 2019).
+En tercer lugar, la educación brinda herramientas como el pensamiento crítico y social a las personas para ejercer su derecho a la igualdad de oportunidades, afectar las estructuras y políticas que afectan a su vida y tener mayor participación en asuntos relacionados con la política y la sociedad civil, de ahí, que la educación estimula a las personas a tener una sociedad más democrática (OXFAM, 2019).
 
-En cuarto lugar, la educación aumenta las
-probabilidades de que los niños de familias pobres tengan ingresos más altos en
-el futuro, por ende, baja los niveles de pobreza al darle oportunidades a las
-familias pobres de salir de la trampa de pobreza, y que los niños pobres puedan
-vivir mejor que sus padres, en otras palabras, la educación también combate la
-pobreza (OXFAM, 2019),
-en especial la pobreza extrema, un síntoma común de la desigualdad en países
-subdesarrollados. De hecho, según la OXFAM si la educación primaria y
-secundaria fueran totalmente universales, la pobreza extrema puede reducirse a
-la mitad; y no menos importante, la UNESCO expresa que cada año, gracias a la
-educación se incrementan los ingresos de los hombres aproximadamente un 10% y
-las mujeres aproximadamente un 20% (OXFAM, 2019).
+En cuarto lugar, la educación aumenta las probabilidades de que los niños de familias pobres tengan ingresos más altos en el futuro, por ende, baja los niveles de pobreza al darle oportunidades a las familias pobres de salir de la trampa de pobreza, y que los niños pobres puedan vivir mejor que sus padres, en otras palabras, la educación también combate la pobreza (OXFAM, 2019), en especial la pobreza extrema, un síntoma común de la desigualdad en países subdesarrollados. De hecho, según la OXFAM si la educación primaria y secundaria fueran totalmente universales, la pobreza extrema puede reducirse a la mitad; y no menos importante, la UNESCO expresa que cada año, gracias a la educación se incrementan los ingresos de los hombres aproximadamente un 10% y las mujeres aproximadamente un 20% (OXFAM, 2019).
 
-Por último, la educación contribuye a disminuir
-la desigualdad de género, ya que en una sociedad desigual las mujeres son más
-proclives a ser más pobres y a la deserción escolar, cuanto mayor es el nivel
-educativo de las mujeres en una sociedad, se resuelven disparidades de brecha
-de genero a nivel de ingreso, pobreza, autonomía reproductiva y poder político
-con respecto a los hombres. Al mismo tiempo, la educación le da control a las
-mujeres sobre su edad de matrimonio y el número de hijos que prefieran tener,
-brindándoles mayor salud y futuro a ellas y a sus hijos, al reducir el número
-de muertes maternas y muertes infantiles. A modo de cierre, la educación les
-brinda a las mujeres competencias ciudadanas y pensamiento crítico que les
-permitan un mayor cuestionamiento acerca de los comportamientos sociales
-tradicionales con respecto a la equidad de género (OXFAM, 2019).
+Por último, la educación contribuye a disminuir la desigualdad de género, ya que en una sociedad desigual las mujeres son más proclives a ser más pobres y a la deserción escolar, cuanto mayor es el nivel educativo de las mujeres en una sociedad, se resuelven disparidades de brecha de genero a nivel de ingreso, pobreza, autonomía reproductiva y poder político con respecto a los hombres. Al mismo tiempo, la educación le da control a las mujeres sobre su edad de matrimonio y el número de hijos que prefieran tener, brindándoles mayor salud y futuro a ellas y a sus hijos, al reducir el número de muertes maternas y muertes infantiles. A modo de cierre, la educación les brinda a las mujeres competencias ciudadanas y pensamiento crítico que les permitan un mayor cuestionamiento acerca de los comportamientos sociales tradicionales con respecto a la equidad de género (OXFAM, 2019).
 
-En paralelo, un estudio empírico de Fiamma
-Santambrogio en 376 países con datos panel que cuantifica el efecto del gasto
-total en educación sobre la distribución de ingreso mostró que, ante un aumento
-del gasto total en educación en un punto porcentual del PIB, la desigualdad de
-ingresos baja entre un 0.4% y 0.6%, con una significancia estadística muy alta
-y una relación causal del gasto total en educación sobre la desigualdad de
-ingresos (Santambrogio, 2018). En otros casos, un estudio empírico de
-Silwester muestra que ante un mayor gasto en educación pública se asocia una
-menor desigualdad de ingresos posterior expresada en el índice Gini, pero el
-estudio también invita a tomar en cuenta los niveles educativos (Santambrogio, 2018). Otro estudio
-empírico de De Gregorio y Lee convergen al mismo resultado mostrando evidencia
-empírica similar acerca de la relación del gasto de educación y la distribución
-de ingreso, pero también expresan que los factores educativos más importantes
-son el rendimiento educativo y la educación equitativa (De Gregorio & Lee, 1999). De la misma manera,
-otro resultado del estudio de Santambrogio muestra que, ante un aumento del
-gasto total en educación, el ingreso per cápita aumenta entre el 2% y el 4%,
-con una significancia estadística alta y una relación causal entre el gasto en
-educación y e ingreso per cápita (Santambrogio, 2018).
+En paralelo, un estudio empírico de Fiamma Santambrogio en 376 países con datos panel que cuantifica el efecto del gasto total en educación sobre la distribución de ingreso mostró que, ante un aumento del gasto total en educación en un punto porcentual del PIB, la desigualdad de ingresos baja entre un 0.4% y 0.6%, con una significancia estadística muy alta y una relación causal del gasto total en educación sobre la desigualdad de ingresos (Santambrogio, 2018). En otros casos, un estudio empírico de Silwester muestra que ante un mayor gasto en educación pública se asocia una menor desigualdad de ingresos posterior expresada en el índice Gini, pero el estudio también invita a tomar en cuenta los niveles educativos (Santambrogio, 2018). Otro estudio empírico de De Gregorio y Lee convergen al mismo resultado mostrando evidencia empírica similar acerca de la relación del gasto de educación y la distribución de ingreso, pero también expresan que los factores educativos más importantes son el rendimiento educativo y la educación equitativa (De Gregorio & Lee, 1999). De la misma manera, otro resultado del estudio de Santambrogio muestra que, ante un aumento del gasto total en educación, el ingreso per cápita aumenta entre el 2% y el 4%, con una significancia estadística alta y una relación causal entre el gasto en educación y e ingreso per cápita (Santambrogio, 2018).
 
-Por su parte, la literatura expresa que el gasto
-de la educación por sí solo no es suficiente para afrontar la desigualdad,
-principalmente la desigualdad de ingresos. De acuerdo con OXFAM, la educación
-que permita una mayor equidad social es de acceso universal, gratuita, pública,
-de calidad y con supervisión pública.
+Por su parte, la literatura expresa que el gasto de la educación por sí solo no es suficiente para afrontar la desigualdad, principalmente la desigualdad de ingresos. De acuerdo con OXFAM, la educación que permita una mayor equidad social es de acceso universal, gratuita, pública, de calidad y con supervisión pública.
 
-Para empezar, el acceso universal y
-gratuito es esencial para la igualdad y equidad social porque les da
-oportunidades justas a los niños sin discriminación alguna de clase, género, etnia,
-etc. y porque el cobro de tasa de enseñanza desde educación preescolar,
-primaria hasta secundaria excluye de raíz a los niños más desfavorecidos,
-principalmente, a las alumnas pobres (OXFAM, 2019).
+Para empezar, el acceso universal y gratuito es esencial para la igualdad y equidad social porque les da oportunidades justas a los niños sin discriminación alguna de clase, género, etnia, etc. y porque el cobro de tasa de enseñanza desde educación preescolar, primaria hasta secundaria excluye de raíz a los niños más desfavorecidos, principalmente, a las alumnas pobres (OXFAM, 2019).
 
-En segundo lugar, la educación pública es
-un medio para garantizar el acceso universal, gratuito y la inclusión social,
-según la OXFAM la educación pública es eficaz para afrontar la desigualdad y su
-magnitud y velocidad de impacto puede ser inigualable, consecuentemente, la
-organización expresa que la mejor solución es invertir de manera adecuada en la
-educación pública en lugar de invertir en el sector privado, OXFAM arguye que
-las alianzas público-privadas y las escuelas privadas se alejan peligrosamente
-del camino a la educación universal, por ende, a una sociedad más equitativa (OXFAM, 2019).
+En segundo lugar, la educación pública es un medio para garantizar el acceso universal, gratuito y la inclusión social, según la OXFAM la educación pública es eficaz para afrontar la desigualdad y su magnitud y velocidad de impacto puede ser inigualable, consecuentemente, la organización expresa que la mejor solución es invertir de manera adecuada en la educación pública en lugar de invertir en el sector privado, OXFAM arguye que las alianzas público-privadas y las escuelas privadas se alejan peligrosamente del camino a la educación universal, por ende, a una sociedad más equitativa (OXFAM, 2019).
 
-En tercer lugar, es importante invertir en
-los docentes, ya que los docentes capacitados y cualificados son el principal
-factor que contribuye a garantizar la calidad de la educación, es decir, son el
-pilar en cualquier sistema educativo, pero desafortunadamente, los profesores
-de las escuelas públicas en su mayoría mujeres, no tienen el apoyo adecuado y
-cuentan con remuneración baja (OXFAM, 2019).
+En tercer lugar, es importante invertir en los docentes, ya que los docentes capacitados y cualificados son el principal factor que contribuye a garantizar la calidad de la educación, es decir, son el pilar en cualquier sistema educativo, pero desafortunadamente, los profesores de las escuelas públicas en su mayoría mujeres, no tienen el apoyo adecuado y cuentan con remuneración baja (OXFAM, 2019).
 
-En cuarto lugar, la educación tiene que ser
-inclusiva, de ahí que, debe abordar necesidades individuales de aprendizajes de
-cada estudiante y responder a las necesidades de quienes sufren retraso escolar
-o exclusión como los niños discapacitados, marginados, de minorías, pobres, de
-género femenino o sin escolarización (OXFAM, 2019).
+En cuarto lugar, la educación tiene que ser inclusiva, de ahí que, debe abordar necesidades individuales de aprendizajes de cada estudiante y responder a las necesidades de quienes sufren retraso escolar o exclusión como los niños discapacitados, marginados, de minorías, pobres, de género femenino o sin escolarización (OXFAM, 2019).
 
-En quinto lugar, el contenido impartido en
-las escuelas debe ser pertinente, debe impartirse en el idioma local y a un
-ritmo favorable para todos los niños mas no a los más aventajados, debe
-cuestionar e inspirar pensamiento crítico sobre las actitudes tradicionales
-frente a la equidad social y de género (OXFAM, 2019).
+En quinto lugar, el contenido impartido en las escuelas debe ser pertinente, debe impartirse en el idioma local y a un ritmo favorable para todos los niños mas no a los más aventajados, debe cuestionar e inspirar pensamiento crítico sobre las actitudes tradicionales frente a la equidad social y de género (OXFAM, 2019).
 
-En sexto lugar, el servicio educativo debe
-tener supervisión pública y dar rendición de cuentas a la ciudadanía y a las
-familias involucradas, porque los sistemas educativos apropiados tienen
-mecanismos adecuados de supervisión pública, para garantizar el buen
-funcionamiento de cada institución educativa a la sociedad (OXFAM, 2019).
+En sexto lugar, el servicio educativo debe tener supervisión pública y dar rendición de cuentas a la ciudadanía y a las familias involucradas, porque los sistemas educativos apropiados tienen mecanismos adecuados de supervisión pública, para garantizar el buen funcionamiento de cada institución educativa a la sociedad (OXFAM, 2019).
 
-En último lugar, una mayor inversión en
-educación incentiva a la progresividad de impuestos para una mayor del gasto
-público, como expresa la organización "La mayor parte del aumento del gasto público [en educación] puede
-sufragarse con una mayor recaudación fiscal aumentando los impuestos que se
-aplican a las personas más ricas y las grandes empresas." (OXFAM, 2019)
-ya que la progresividad de los impuestos es muy importante en la financiación
-del gasto público (OXFAM, 2019).
-Cabe destacar que Ecuador triplicó el gasto en educación en los años 2003 a
-2010, aplicando políticas eficaces de movilización fiscal y priorizando la
-educación en sus presupuestos (OXFAM, 2019).
+En último lugar, una mayor inversión en educación incentiva a la progresividad de impuestos para una mayor del gasto público, como expresa la organización "La mayor parte del aumento del gasto público [en educación] puede sufragarse con una mayor recaudación fiscal aumentando los impuestos que se aplican a las personas más ricas y las grandes empresas." (OXFAM, 2019) ya que la progresividad de los impuestos es muy importante en la financiación del gasto público (OXFAM, 2019). Cabe destacar que Ecuador triplicó el gasto en educación en los años 2003 a 2010, aplicando políticas eficaces de movilización fiscal y priorizando la educación en sus presupuestos (OXFAM, 2019).
 
-Por el contrario, un gasto en educación en
-una economía que no tiene en cuenta algunos de los anteriores puntos, como la
-desigualdad educativa, aparte de no solucionar el problema de desigualdad lo
-profundiza, según OXFAM "Un sistema educativo sumamente desigual puede también
-exacerbar aún más las disparidades en la sociedad." (OXFAM, 2019),
-en muchos países subdesarrollados, para ilustrar, en México es preocupante el
-problema de distribución de oportunidades, es decir, la desigualdad educativa,
-según la revista Mexicana de Investigación Educativa "... el problema más
-importante del sistema educativo mexicano es la desigualdad" (García et al,
-1998).  No obstante, este problema no
-solo está presente en México, sino que se presenta en muchos países
-principalmente subdesarrollados donde la desigualdad educativa es un todavía
-problema vigente.
+Por el contrario, un gasto en educación en una economía que no tiene en cuenta algunos de los anteriores puntos, como la desigualdad educativa, aparte de no solucionar el problema de desigualdad lo profundiza, según OXFAM "Un sistema educativo sumamente desigual puede también exacerbar aún más las disparidades en la sociedad." (OXFAM, 2019), en muchos países subdesarrollados, para ilustrar, en México es preocupante el problema de distribución de oportunidades, es decir, la desigualdad educativa, según la revista Mexicana de Investigación Educativa "... el problema más importante del sistema educativo mexicano es la desigualdad" (García et al, 1998).  No obstante, este problema no solo está presente en México, sino que se presenta en muchos países principalmente subdesarrollados donde la desigualdad educativa es un todavía problema vigente.
 
-Sumado a esto, uno de los resultados más
-importantes del estudio empírico de De Gregorio y Lee, es que los factores
-educativos más importantes para una distribución de ingresos más equitativas
-son el rendimiento educativo de los alumnos y una distribución educativa de la
-educación (De Gregorio & Lee, 1999), en pocas palabras,
-una educación equitativa. Así mismo, la literatura muestra que tanto modelos
-teóricos como modelos empíricos muestran que la desigualdad educativa aumenta
-la desigualdad, para empezar, el modelo de capital humano de distribución de
-ingreso del trabajo de Schultz, Becker y Mincer "implica que la distribución de los ingresos está determinada por el
-nivel y la distribución de la escolaridad entre la población" (De Gregorio & Lee, 1999). De manera similar,
-estudios empíricos como el trabajo de Becker y Chiswick en las regiones de
-Estados Unidos muestran que, en todas las regiones del país, la desigualdad de
-ingresos se correlaciona positivamente con la desigualdad de escolaridad, pero
-negativamente con el promedio de escolaridad (De Gregorio & Lee, 1999). Algo semejante
-ocurre con el trabajo empírico de Chiswick basado en datos de corte
-transversal, donde expresa que la desigualdad de ingresos aumenta con la
-desigualdad educativa (De Gregorio & Lee, 1999). Finalmente,
-estudios posteriores como los trabajos empíricos de Adelman y Morris en 1973,
-Chenery y Syrquin en 1975, Ahwluwalia en 1975, Marin y Psacharopoulos en 1974 o
-Winegarden en 1987 convergen al mismo resultado (De Gregorio & Lee, 1999). En resumen, hay
-literatura que da evidencia consolidada de que la desigualdad educativa aumenta
-la desigualdad mas no la reduce.
+Sumado a esto, uno de los resultados más importantes del estudio empírico de De Gregorio y Lee, es que los factores educativos más importantes para una distribución de ingresos más equitativas son el rendimiento educativo de los alumnos y una distribución educativa de la educación (De Gregorio & Lee, 1999), en pocas palabras, una educación equitativa. Así mismo, la literatura muestra que tanto modelos teóricos como modelos empíricos muestran que la desigualdad educativa aumenta la desigualdad, para empezar, el modelo de capital humano de distribución de ingreso del trabajo de Schultz, Becker y Mincer "implica que la distribución de los ingresos está determinada por el nivel y la distribución de la escolaridad entre la población" (De Gregorio & Lee, 1999). De manera similar, estudios empíricos como el trabajo de Becker y Chiswick en las regiones de Estados Unidos muestran que, en todas las regiones del país, la desigualdad de ingresos se correlaciona positivamente con la desigualdad de escolaridad, pero negativamente con el promedio de escolaridad (De Gregorio & Lee, 1999). Algo semejante ocurre con el trabajo empírico de Chiswick basado en datos de corte transversal, donde expresa que la desigualdad de ingresos aumenta con la desigualdad educativa (De Gregorio & Lee, 1999). Finalmente, estudios posteriores como los trabajos empíricos de Adelman y Morris en 1973, Chenery y Syrquin en 1975, Ahwluwalia en 1975, Marin y Psacharopoulos en 1974 o Winegarden en 1987 convergen al mismo resultado (De Gregorio & Lee, 1999). En resumen, hay literatura que da evidencia consolidada de que la desigualdad educativa aumenta la desigualdad mas no la reduce.
 
-El problema de la desigualdad educativa, en
-países subdesarrollados como México, por tomar un ejemplo de referencia,
-produce los síntomas de un sistema educativo contraproducente y disfuncional,
-ante todo, en un entorno de desigualdad educativa se presentan niveles de
-escolaridad bajos y de inasistencias considerables en la población, en el caso
-de México, la población se encuentra en un rezago educativo crítico y su
-población económicamente activa cuenta con niveles de escolaridad muy bajos,
-también,  una preocupante inasistencia
-escolar de estudiantes entre los 6 y 14 años de edad y además, donde el 60% de
-los estudiantes entre 15 y 19 años no iban a la escuela ya que la secundaria es
-el punto crítico de deserción de la mayor parte de estudiantes mexicanos
-(García et al, 1998).
+El problema de la desigualdad educativa, en países subdesarrollados como México, por tomar un ejemplo de referencia, produce los síntomas de un sistema educativo contraproducente y disfuncional, ante todo, en un entorno de desigualdad educativa se presentan niveles de escolaridad bajos y de inasistencias considerables en la población, en el caso de México, la población se encuentra en un rezago educativo crítico y su población económicamente activa cuenta con niveles de escolaridad muy bajos, también,  una preocupante inasistencia escolar de estudiantes entre los 6 y 14 años de edad y además, donde el 60% de los estudiantes entre 15 y 19 años no iban a la escuela ya que la secundaria es el punto crítico de deserción de la mayor parte de estudiantes mexicanos (García et al, 1998).
 
-La desigualdad educativa puede ser un
-factor importante para problemas posteriores en el sistema educativo, para
-empezar en muchos países subdesarrollados la desigualdad tanto social como
-educativa es tan seria que no hay tendencias educativas homogéneas en un país,
-por ejemplo, en México donde "... hay entidades federativas más desarrolladas que
-otras" (García et al, 1998). Por lo cual, los niños más pobres y vulnerables como
-los que están sin hogar en la calle, los que viven en zonas y regiones
-atrasadas de países subdesarrollados y los que viven en zonas marginadas de las
-ciudades tienen barreras importantes para acceder a un buen servicio de
-educación que les permitan aprender habilidades y destrezas básicas que deberían
-entregar la escuela (García et al, 1998). Para ilustrar, en las zonas rurales
-más atrasadas las escuelas se encuentran a grandes distancias y muchas veces no
-se cubren ni siquiera el ciclo primario, y en las periferias urbanas las
-condiciones de estudio son inadecuadas por los problemas de eficiencia del
-sistema educativo (García et al, 1998). Por otra parte, otro de los problemas
-de los sistemas educativos relacionados con la desigualdad educativa, generalmente
-en las escuelas públicas, es la preparación deficiente de los docentes, donde
-el desinterés de los profesores frente a estudiantes poco motivados influye en
-los malos resultados que se obtiene en las escuelas (García et al, 1998). De
-hecho, el estudio expresa que con la desigualdad educativa "Se establece una especie de círculo vicioso en el
-que el bajo origen de clase y el mal funcionamiento del sistema educativo se
-refuerzan mutuamente." (García et al, 1998)
+La desigualdad educativa puede ser un factor importante para problemas posteriores en el sistema educativo, para empezar en muchos países subdesarrollados la desigualdad tanto social como educativa es tan seria que no hay tendencias educativas homogéneas en un país, por ejemplo, en México donde "... hay entidades federativas más desarrolladas que otras" (García et al, 1998). Por lo cual, los niños más pobres y vulnerables como los que están sin hogar en la calle, los que viven en zonas y regiones atrasadas de países subdesarrollados y los que viven en zonas marginadas de las ciudades tienen barreras importantes para acceder a un buen servicio de educación que les permitan aprender habilidades y destrezas básicas que deberían entregar la escuela (García et al, 1998). Para ilustrar, en las zonas rurales más atrasadas las escuelas se encuentran a grandes distancias y muchas veces no se cubren ni siquiera el ciclo primario, y en las periferias urbanas las condiciones de estudio son inadecuadas por los problemas de eficiencia del sistema educativo (García et al, 1998). Por otra parte, otro de los problemas de los sistemas educativos relacionados con la desigualdad educativa, generalmente en las escuelas públicas, es la preparación deficiente de los docentes, donde el desinterés de los profesores frente a estudiantes poco motivados influye en los malos resultados que se obtiene en las escuelas (García et al, 1998). De hecho, el estudio expresa que con la desigualdad educativa "Se establece una especie de círculo vicioso en el que el bajo origen de clase y el mal funcionamiento del sistema educativo se refuerzan mutuamente." (García et al, 1998)
 
-Por otro lado, Santambrogio en su estudio
-empírico nos expresa que hay una tendencia de los países subdesarrollados de
-destinar más recursos del gasto de educación a niveles de educación superior
-pero que no ayuda a reducir la desigualdad (Santambrogio, 2018), por lo contrario, hay literatura de
-diversos autores como Heckman, Silwester entre otros, incluyendo a
-Santambrogio, y organizaciones como OXFAM que resaltan la importancia de tomar
-en consideración los niveles educativos tempranos desde educación preescolar,
-primaria hasta secundaria, para afrontar el problema de desigualdad desde la
-raíz a través de la educación. Por un lado, Heckamn y otros autores
-relacionados nos expresan que la educación desde la infancia temprana es
-fundamental para el desarrollo de habilidades cognitivas, socioemocionales y de
-salud de los niños que les serían muy útiles para obtener ingresos futuros en
-la adultez. De hecho, Santambrogio expresa que para que la educación sea una
-herramienta que permita movilidad social es importante diferenciar el gasto que
-los países destinan a la educación en total y al gasto por nivel educativo y
-expresa que la propuesta de Heckman y relacionados puede ser muy útil en la
-creación de políticas públicas (Santambrogio, 2018), finalmente, una de las recomendaciones
-explícitas para una educación equitativa es "Garantizar una educación universal
-y gratuita desde la educación preescolar hasta la secundaria." (OXFAM, 2019).
+Por otro lado, Santambrogio en su estudio empírico nos expresa que hay una tendencia de los países subdesarrollados de destinar más recursos del gasto de educación a niveles de educación superior pero que no ayuda a reducir la desigualdad (Santambrogio, 2018), por lo contrario, hay literatura de diversos autores como Heckman, Silwester entre otros, incluyendo a Santambrogio, y organizaciones como OXFAM que resaltan la importancia de tomar en consideración los niveles educativos tempranos desde educación preescolar, primaria hasta secundaria, para afrontar el problema de desigualdad desde la raíz a través de la educación. Por un lado, Heckamn y otros autores relacionados nos expresan que la educación desde la infancia temprana es fundamental para el desarrollo de habilidades cognitivas, socioemocionales y de salud de los niños que les serían muy útiles para obtener ingresos futuros en la adultez. De hecho, Santambrogio expresa que para que la educación sea una herramienta que permita movilidad social es importante diferenciar el gasto que los países destinan a la educación en total y al gasto por nivel educativo y expresa que la propuesta de Heckman y relacionados puede ser muy útil en la creación de políticas públicas (Santambrogio, 2018), finalmente, una de las recomendaciones explícitas para una educación equitativa es "Garantizar una educación universal y gratuita desde la educación preescolar hasta la secundaria." (OXFAM, 2019).
 
-En otro orden de ideas, un estudio empírico
-sobre los efectos del gasto en distintas etapas educacionales de los autores
-Gruber y Kosack, muestra que una mayor tasa de matrícula en la educación
-primaria, se asocia con una mayor desigualdad futura en países
-subdesarrollados, porque estos países se destina la mayor parte del gasto total
-de educación a la educación superior, ignorando la inversión en niveles
-educativos previos a la educación superior (Santambrogio, 2018).
+En otro orden de ideas, un estudio empírico sobre los efectos del gasto en distintas etapas educacionales de los autores Gruber y Kosack, muestra que una mayor tasa de matrícula en la educación primaria, se asocia con una mayor desigualdad futura en países subdesarrollados, porque estos países se destina la mayor parte del gasto total de educación a la educación superior, ignorando la inversión en niveles educativos previos a la educación superior (Santambrogio, 2018).
 
 ## Base de datos
 
@@ -502,34 +224,12 @@ Se va a trabajar la metodología de **datos panel**, la cual consiste en realiza
 
     <https://datos.bancomundial.org/indicator/FP.CPI.TOTL.ZG>
 
--   De Gregorio, J., &
-    Lee, J.-W. (junio de 1999). EDUCATION AND INCOME DISTRIBUTION: NEW EVIDENCE FROM
-    CROSS-COUNTRY DATA. *SERIE ECONOMÍA*(55), 1-41. Obtenido de
-    <https://www.researchgate.net/profile/Jose-De-Gregorio/publication/4738379_Education_and_Income_Distribution_New_Evidence_from_Cross-country_Data/links/55bb6e7b08aed621de0d9419/Education-and-Income-Distribution-New-Evidence-from-Cross-country-Data.pdf>
+-   De Gregorio, J., & Lee, J.-W. (junio de 1999). EDUCATION AND INCOME DISTRIBUTION: NEW EVIDENCE FROM CROSS-COUNTRY DATA. *SERIE ECONOMÍA*(55), 1-41. Obtenido de <https://www.researchgate.net/profile/Jose-De-Gregorio/publication/4738379_Education_and_Income_Distribution_New_Evidence_from_Cross-country_Data/links/55bb6e7b08aed621de0d9419/Education-and-Income-Distribution-New-Evidence-from-Cross-country-Data.pdf>
 
--   García, H., Bracho, T.,
-    Irrabola, M., Rodríguez, R., & Schmelkes, S. (junio de 1998). Educación y
-    desigualdad social. *Revista Mexicana de Investigación Educativa, 3*(6),
-    317-345. Obtenido de <https://www.redalyc.org/articulo.oa?id=14000607>
+-   García, H., Bracho, T., Irrabola, M., Rodríguez, R., & Schmelkes, S. (junio de 1998). Educación y desigualdad social. *Revista Mexicana de Investigación Educativa, 3*(6), 317-345. Obtenido de <https://www.redalyc.org/articulo.oa?id=14000607>
 
--   OEA. (2006). *Educación y desigualdad social.*
-    Organizacion de Estados Americanos, Ministerio de Educación, Ciencia y
-    Tecnología de Argentina., Buenos Aires, Buenos Aires.
+-   OEA. (2006). *Educación y desigualdad social.* Organizacion de Estados Americanos, Ministerio de Educación, Ciencia y Tecnología de Argentina., Buenos Aires, Buenos Aires.
 
--   OXFAM. (2019). *EL PODER DE LA EDUCACIÓN EN LA LUCHA CONTRA LA DESIGUALDAD.* Oxford: OXFAM GB.
-    doi:10.21201/2019.4931
+-   OXFAM. (2019). *EL PODER DE LA EDUCACIÓN EN LA LUCHA CONTRA LA DESIGUALDAD.* Oxford: OXFAM GB. <doi:10.21201/2019.4931>
 
--   Santambrogio, F. O. (2018). *Efectos del gasto en educación
-    sobre la desigualdad de ingresos en Chile y el mundo.* Memoria, PONTIFICIA
-    UNIVERSIDAD CATÓLICA DE VALPARAÍSO , Valparaiso, Valparaíso. Obtenido de
-    <http://opac.pucv.cl/pucv_txt/txt-6500/UCC6801_01.pdf>
-
-
-
-
-
-
-
-
-
-
+-   Santambrogio, F. O. (2018). *Efectos del gasto en educación sobre la desigualdad de ingresos en Chile y el mundo.* Memoria, PONTIFICIA UNIVERSIDAD CATÓLICA DE VALPARAÍSO , Valparaiso, Valparaíso. Obtenido de <http://opac.pucv.cl/pucv_txt/txt-6500/UCC6801_01.pdf>

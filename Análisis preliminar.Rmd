@@ -1,0 +1,38 @@
+---
+title: "Análisis preliminar"
+author: "Morales, Pardo, Urango"
+date: "20/5/2021"
+output: html_document
+---
+```{r}
+library(tidyverse)
+library(wbstats)
+library(lubridate)
+library(knitr)
+library(modelsummary)
+library(GGally)
+library(ggthemes)
+```
+
+```{r}
+z <- c("SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")
+
+datos <- wb_data(z,country = "countries_only", start_date = 1960, end_date = 2019)
+```
+
+```{r}
+datos <- select(datos,"iso3c","country","date","SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")
+
+names(datos) <- c("Código","Pais","Año","Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion")
+```
+
+```{r}
+datos <- datos %>%  mutate(Año=make_date(year=Año))
+```
+
+## Punto 5
+
+```{r}
+datasummary_skim(select(datos,"Desigualdad","Progresividad","Gasto_educ","Inflacion","PIB_PER_CAPITA","Poblacion"), histogram = FALSE)
+```
+
