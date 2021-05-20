@@ -105,20 +105,98 @@ Esta variable nos indica el número de habitantes por país, esto nos ayuda en n
 
 Las observaciones son los diferentes países del mundo para cada año entre 1960 y 2019, de este modo se encontraron un total 13020 observaciones.
 
+## Regresión del modelo y resultados
+
+**Sin efectos fijos**
+
 ```{r}
 modelo1 <- lm(Desigualdad~Gasto_educ+Progresividad+Gasto_educ+Inflacion+PIB_PER_CAPITA+Poblacion, data = datos)
+summary(modelo1)
 ```
+
+**Con efectos fijos**
 
 ```{r}
 
-efectos_fijos <- plm(Desigualdad ~ Gasto_educ, 
+modelo2 <- plm(Desigualdad ~ Gasto_educ, 
                      data = datos, 
                      index = c("Pais", "Año"), 
                      model = c("within"), 
                      effect = c("twoway"))
-r.squared(efectos_fijos)
-summary(efectos_fijos)
+r.squared(modelo2)
+summary(modelo2)
 ```
+
+¿MCO o efectos_fijos?
+
+```{r}
+pFtest(modelo2, modelo1)
+```
+
+## Lctura de los resultados
+
+### Soporte visual del modelo
+
+#### Heterogeneidad dentro de los países
+
+```{r}
+pib_paises <- pib %>% 
+  group_by(country2) %>% 
+  summarize(media = mean(pib_percapita, na.rm = TRUE), 
+            sd = sd(pib_percapita, na.rm = TRUE), 
+            n = n(), 
+            ee = sd/sqrt(n), 
+            me = qt(p = 0.025, df = n-1) * ee, 
+            li = media - me,
+            ls = media + me)
+```
+
+```{r}
+ggplot(pib_paises, aes(x = country2, y=media,  ymin = li, ymax = ls)) + 
+  geom_point() + 
+  geom_errorbar() + 
+  scale_y_continuous(labels = dollar)
+```
+
+#### Heterogeneidad dentro de años
+
+```{r}
+pib_anos <- pib %>% 
+  group_by(year) %>% 
+  summarize(media = mean(pib_percapita, na.rm = TRUE), 
+            sd = sd(pib_percapita, na.rm = TRUE), 
+            n = n(), 
+            ee = sd/sqrt(n), 
+            me = qt(p = 0.025, df = n-1) * ee, 
+            li = media - me,
+            ls = media + me)
+```
+
+```{r}
+ggplot(pib_anos, aes(x = year, y=media, ymin = li, ymax = ls)) + 
+  geom_errorbar() + 
+  geom_line() +
+  geom_point() + 
+  scale_y_continuous(labels = dollar)
+```
+
+### ¿Cuál es la relación entre el indice de GINI y el Gasto en educación?
+
+```{r}
+ggplot(data = datos %>% filter(between(Año, 1960, 2019)), 
+       mapping = aes(x = Desigualdad, y = Gasto_educ, color = Pais)) + 
+  geom_point() + 
+  facet_wrap(vars(Año))
+```
+
+```{r}
+ggplot(data = datos, mapping = aes(x = Desigualdad, y = Gasto_educ, color = País, alpha =Año)) + 
+  geom_point()
+```
+
+## Principales supuestos de los modelos
+
+## Análisis preliminar de los resultados
 
 ## Bibliografía
 
