@@ -9,8 +9,7 @@ editor_options:
   chunk_output_type: inline
 ---
 
-
-## Activar paquetes 
+## Activar paquetes
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
@@ -64,10 +63,10 @@ ee_uu <- pib %>% filter(country =="United States") %>%
   select(pib)
 ```
 
-
 ## Datos Panel
 
 ### Exploración:
+
 ```{r}
 pib %>% 
   arrange(year) %>% 
@@ -76,9 +75,6 @@ pib %>%
   arrange(year) %>% 
   tail(n = 10)
 ```
-
-
-
 
 ```{r}
 ggplot(pib, aes(year, pib, color = country2, 
@@ -94,7 +90,7 @@ ggplot(pib, aes(year, pib_percapita)) +
   facet_wrap(vars(country2))
 ```
 
-### Heterogeneidad dentro de países 
+### Heterogeneidad dentro de países
 
 ```{r}
 pib_paises <- pib %>% 
@@ -111,12 +107,11 @@ pib_paises <- pib %>%
 ```{r}
 ggplot(pib_paises, aes(x = country2, y=media,  ymin = li, ymax = ls)) + 
   geom_point() + 
-  geom_line() + 
   geom_errorbar() + 
   scale_y_continuous(labels = dollar)
 ```
 
-### Heterogeneidad dentro de años 
+### Heterogeneidad dentro de años
 
 ```{r}
 pib_anos <- pib %>% 
@@ -148,10 +143,9 @@ ggplot(data = pib %>% filter(between(year, 2012, 2017)),
 ```
 
 ```{r}
-ggplot(data = pib, mapping = aes(x = homicidios, y = pib_percapita, color = country2)) + 
+ggplot(data = pib, mapping = aes(x = homicidios, y = pib_percapita, color = country2, alpha =year)) + 
   geom_point()
 ```
-
 
 ### Numéricamente
 
@@ -181,6 +175,10 @@ ggplot(resultados, aes(x = homicidios, y = .fitted, color = country2,
   geom_smooth(method = "lm") +
   geom_abline(slope = -480.3, intercept = 31759.24, color = "Red")
 ```
+```{r}
+pib %>% filter(country=="Colombia")
+%>% arrange(desc)
+```
 
 
 Efectos fijos de año:
@@ -194,9 +192,8 @@ Efectos fijos de dos vías:
 
 ```{r}
 ef_dos_vias <- lm(pib_percapita ~ homicidios + factor(year) + country2, data = pib)
-summary(ef_ano)
+summary(ef_dos_vias)
 ```
-
 
 ```{r}
 library(plm)
@@ -215,7 +212,6 @@ summary(efectos_fijos)
 pFtest(efectos_fijos, mco)
 ```
 
-
 Efectos aleatorios:
 
 ```{r}
@@ -233,8 +229,7 @@ phtest(efectos_fijos, efectos_aleatorios)
 
 Para otros análisis y pruebas ver el siguiente documento:
 
-https://www.princeton.edu/~otorres/Panel101R.pdf
-https://dss.princeton.edu/training/Panel101.pdf
+<https://www.princeton.edu/~otorres/Panel101R.pdf> <https://dss.princeton.edu/training/Panel101.pdf>
 
 Usar `modelsummary` para incluir resultados en una sola tabla:
 
@@ -243,4 +238,3 @@ modelos <- list("MCO" = ef_dos_vias, "Efectos Fijos" = efectos_fijos,
                 "Efectos Aleatorios" = efectos_aleatorios)
 modelsummary(modelos, stars = TRUE)
 ```
-
