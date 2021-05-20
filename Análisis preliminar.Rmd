@@ -35,6 +35,8 @@ datos <- datos %>%  mutate(Año=make_date(year=Año))
 
 ## Descripción del modelo
 
+$Desigualdad=\beta +\alpha_{1}(Gasto~en~educaci\acute{o}n)+\alpha_{2}(Progresividad)+\alpha_{3}(Inflaci\acute{o}n)+\alpha_{4}(PIB~per~c\acute{a}pita)+\alpha_{4}(Poblaci\acute{o}n)+\mu$
+
 ### Plan de análisis
 
 Se va a trabajar la metodología de **datos panel**, la cual consiste en realizar un estudio estadístico a lo largo del tiempo, sobre el comportamiento de las variables escogidas para los diferentes países, los pasos de la metodología a seguir son:
@@ -93,3 +95,33 @@ Esta variable nos indica el número de habitantes por país, esto nos ayuda en n
 **Número de observaciones:**
 
 Las observaciones son los diferentes países del mundo para cada año entre 1960 y 2019, de este modo se encontraron un total 13020 observaciones.
+
+## Bibliografía
+
+-   Banco Mundial (16 de diciembre, 2020). Índice de Gini. [SI.POV.GINI]. Recuperado de [<https://datos.bancomundial.org/indicator/SI.POV.GINI>](https://datos.bancomundial.org/indicator/SI.POV.GINI){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). Impuestos sobre la renta, las utilidades y las ganancias de capital (% del total de impuestos) [GC.TAX.YPKG.ZS]. Recuperado de [<https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS>](https://datos.bancomundial.org/indicador/GC.TAX.YPKG.ZS){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). Gasto público en educación, total (% del PIB). [SE.XPD.TOTL.GD.ZS]. Recuperado de [<https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS>](https://datos.bancomundial.org/indicador/SE.XPD.TOTL.GD.ZS){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). PIB per cápita (US\$ a precios actuales). [NY.GDP.PCAP.CD]. Recuperado de
+
+    [<https://datos.bancomundial.org/indicator/NY.GDP.PCAP.CD>](https://datos.bancomundial.org/indicator/NY.GDP.PCAP.CD){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). Población, total. [SP.POP.TOTL]. Recuperado de
+
+    [<https://datos.bancomundial.org/indicator/SP.POP.TOTL>](https://datos.bancomundial.org/indicator/SP.POP.TOTL){.uri}
+
+-   Banco Mundial (16 de diciembre, 2020). Inflación, precios al consumidor (% anual). [FP.CPI.TOTL.ZG]. Recuperado de
+
+    [<https://datos.bancomundial.org/indicator/FP.CPI.TOTL.ZG>](https://datos.bancomundial.org/indicator/FP.CPI.TOTL.ZG){.uri}
+
+-   De Gregorio, J., & Lee, J.-W. (junio de 1999). EDUCATION AND INCOME DISTRIBUTION: NEW EVIDENCE FROM CROSS-COUNTRY DATA. *SERIE ECONOMÍA*(55), 1-41. Obtenido de [<https://www.researchgate.net/profile/Jose-De-Gregorio/publication/4738379_Education_and_Income_Distribution_New_Evidence_from_Cross-country_Data/links/55bb6e7b08aed621de0d9419/Education-and-Income-Distribution-New-Evidence-from-Cross-country-Data.pdf>](https://www.researchgate.net/profile/Jose-De-Gregorio/publication/4738379_Education_and_Income_Distribution_New_Evidence_from_Cross-country_Data/links/55bb6e7b08aed621de0d9419/Education-and-Income-Distribution-New-Evidence-from-Cross-country-Data.pdf){.uri}
+
+-   García, H., Bracho, T., Irrabola, M., Rodríguez, R., & Schmelkes, S. (junio de 1998). Educación y desigualdad social. *Revista Mexicana de Investigación Educativa, 3*(6), 317-345. Obtenido de [<https://www.redalyc.org/articulo.oa?id=14000607>](https://www.redalyc.org/articulo.oa?id=14000607){.uri}
+
+-   OEA. (2006). *Educación y desigualdad social.* Organizacion de Estados Americanos, Ministerio de Educación, Ciencia y Tecnología de Argentina., Buenos Aires, Buenos Aires.
+
+-   OXFAM. (2019). *EL PODER DE LA EDUCACIÓN EN LA LUCHA CONTRA LA DESIGUALDAD.* Oxford: OXFAM GB. <doi:10.21201/2019.4931>
+
+-   Santambrogio, F. O. (2018). *Efectos del gasto en educación sobre la desigualdad de ingresos en Chile y el mundo.* Memoria, PONTIFICIA UNIVERSIDAD CATÓLICA DE VALPARAÍSO , Valparaiso, Valparaíso. Obtenido de [<http://opac.pucv.cl/pucv_txt/txt-6500/UCC6801_01.pdf>](http://opac.pucv.cl/pucv_txt/txt-6500/UCC6801_01.pdf){.uri}
