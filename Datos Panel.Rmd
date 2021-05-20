@@ -5,18 +5,20 @@ output:
   html_notebook:
     toc: yes
     toc_float: yes
+editor_options: 
+  chunk_output_type: inline
 ---
 
-## Activar paquetes
+
+## Activar paquetes 
 
 ```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(lubridate)
 library(WDI)
-library(effects)
+library(modelsummary)
 library(stargazer)
 library(scales)
-
 options(scipen = 999)
 ```
 
@@ -37,23 +39,49 @@ pib <- WDI(country = c("US", "CA", "GB", "DE", "CN",
            start = 1960, end = 2018)
 ```
 
+## Cambios a los datos
+
+```{r}
+pib <- pib %>% 
+  rename(pib_percapita = NY.GDP.PCAP.CD, 
+         pib = NY.GDP.MKTP.CD, 
+         homicidios = VC.IHR.PSRC.P5) %>%  
+  group_by(year) %>% 
+  mutate(rank_year = rank(pib)) %>% 
+  ungroup() %>% 
+  arrange(country, year) %>% 
+  group_by(country) %>% 
+  mutate(rank_2018 = last(rank_year)) %>% 
+  ungroup() %>% 
+  mutate(country2 = factor(country), 
+         country2 = fct_reorder(country2, rank_2018, .desc = TRUE))
+```
+
+```{r}
+pib_2018 <- pib %>% filter(year == 2018)
+
+ee_uu <- pib %>% filter(country =="United States") %>% 
+  select(pib)
+```
+
+
 ## Datos Panel
 
 ### Exploración:
-
 ```{r}
 pib %>% 
   arrange(year) %>% 
-  head()
+  head(n = 10)
 pib %>% 
   arrange(year) %>% 
-  tail()
+  tail(n = 10)
 ```
 
-Gráficamente:
+
+
 
 ```{r}
-ggplot(pib, aes(year, pib_percapita, color = country2, 
+ggplot(pib, aes(year, pib, color = country2, 
                 linetype = country2)) + 
   geom_line() + 
   scale_y_continuous(label = dollar)
@@ -66,7 +94,7 @@ ggplot(pib, aes(year, pib_percapita)) +
   facet_wrap(vars(country2))
 ```
 
-### Heterogeneidad dentro de países
+### Heterogeneidad dentro de países 
 
 ```{r}
 pib_paises <- pib %>% 
@@ -88,7 +116,7 @@ ggplot(pib_paises, aes(x = country2, y=media,  ymin = li, ymax = ls)) +
   scale_y_continuous(labels = dollar)
 ```
 
-### Heterogeneidad dentro de años
+### Heterogeneidad dentro de años 
 
 ```{r}
 pib_anos <- pib %>% 
@@ -119,6 +147,12 @@ ggplot(data = pib %>% filter(between(year, 2012, 2017)),
   facet_wrap(vars(year))
 ```
 
+```{r}
+ggplot(data = pib, mapping = aes(x = homicidios, y = pib_percapita, color = country2)) + 
+  geom_point()
+```
+
+
 ### Numéricamente
 
 ```{r}
@@ -135,6 +169,20 @@ ef_pais <- lm(pib_percapita ~ homicidios + country2, data = pib)
 summary(ef_pais)
 ```
 
+¿QUé indican estos resultados?
+
+```{r}
+library(broom)
+resultados <- augment(ef_pais)
+
+ggplot(resultados, aes(x = homicidios, y = .fitted, color = country2, 
+                       shape = country2)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  geom_abline(slope = -480.3, intercept = 31759.24, color = "Red")
+```
+
+
 Efectos fijos de año:
 
 ```{r}
@@ -145,9 +193,10 @@ summary(ef_ano)
 Efectos fijos de dos vías:
 
 ```{r}
-ef_ano <- lm(pib_percapita ~ homicidios + factor(year) + country2, data = pib)
+ef_dos_vias <- lm(pib_percapita ~ homicidios + factor(year) + country2, data = pib)
 summary(ef_ano)
 ```
+
 
 ```{r}
 library(plm)
@@ -160,6 +209,13 @@ r.squared(efectos_fijos)
 summary(efectos_fijos)
 ```
 
+¿MCO o efectos_fijos?
+
+```{r}
+pFtest(efectos_fijos, mco)
+```
+
+
 Efectos aleatorios:
 
 ```{r}
@@ -168,7 +224,7 @@ efectos_aleatorios <- plm(pib_percapita ~ homicidios,
                      index = c("country2", "year"), 
                      model = c("random"), 
                      effect = c("twoway"))
-summary.plm.list(efectos_aleatorios)
+summary(efectos_aleatorios)
 ```
 
 ```{r}
@@ -177,4 +233,14 @@ phtest(efectos_fijos, efectos_aleatorios)
 
 Para otros análisis y pruebas ver el siguiente documento:
 
-<https://www.princeton.edu/~otorres/Panel101R.pdf>
+https://www.princeton.edu/~otorres/Panel101R.pdf
+https://dss.princeton.edu/training/Panel101.pdf
+
+Usar `modelsummary` para incluir resultados en una sola tabla:
+
+```{r}
+modelos <- list("MCO" = ef_dos_vias, "Efectos Fijos" = efectos_fijos, 
+                "Efectos Aleatorios" = efectos_aleatorios)
+modelsummary(modelos, stars = TRUE)
+```
+
