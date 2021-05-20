@@ -133,7 +133,7 @@ summary(modelo2)
 pFtest(modelo2, modelo1)
 ```
 
-## Lctura de los resultados
+## Lectura de los resultados
 
 ### Soporte visual del modelo
 
@@ -197,6 +197,8 @@ ggplot(data = datos, mapping = aes(x = Desigualdad, y = Gasto_educ, color = Paí
 ## Principales supuestos de los modelos
 
 ## Análisis preliminar de los resultados
+
+¿Resultados vs literatura, Resultados vs Hipoteis. 
 
 ## Bibliografía
 
