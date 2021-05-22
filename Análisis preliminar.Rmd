@@ -44,7 +44,7 @@ write_delim(datos, delim = ";", file = "datos_wb.txt")
 
 ## Descripción del modelo
 
-$Desigualdad=\beta +\alpha_{1}(Gasto~en~educaci\acute{o}n)+\alpha_{2}(Progresividad)+\alpha_{3}(Inflaci\acute{o}n)+\alpha_{4}(PIB~per~c\acute{a}pita)+\alpha_{4}(Poblaci\acute{o}n)+\mu$
+$Desigualdad_{it}=\beta +\alpha_{1}(Gasto~en~educaci\acute{o}n)_{it}+\alpha_{2}(Progresividad)_{it}+\alpha_{3}(Inflaci\acute{o}n)_{it}+\alpha_{4}(PIB~per~c\acute{a}pita)_{it}+\alpha_{5}(Poblaci\acute{o}n)_{it}+\mu$
 
 ### Plan de análisis
 
@@ -109,6 +109,7 @@ Las observaciones son los diferentes países del mundo para cada año entre 1960
 
 **Sin efectos fijos**
 
+
 ```{r}
 modelo1 <- lm(Desigualdad~Gasto_educ+Progresividad+Gasto_educ+Inflacion+PIB_PER_CAPITA+Poblacion, data = datos)
 summary(modelo1)
@@ -118,7 +119,8 @@ summary(modelo1)
 
 ```{r}
 
-modelo2 <- plm(Desigualdad ~ Gasto_educ, 
+modelo2 <- plm(Desigualdad ~ Gasto_educ+ Progresividad + Gasto_educ + 
+    Inflacion + PIB_PER_CAPITA + Poblacion, 
                      data = datos, 
                      index = c("Pais", "Año"), 
                      model = c("within"), 
@@ -135,15 +137,17 @@ pFtest(modelo2, modelo1)
 
 ## Lectura de los resultados
 
+
+
 ### Soporte visual del modelo
 
 #### Heterogeneidad dentro de los países
 
 ```{r}
-pib_paises <- pib %>% 
-  group_by(country2) %>% 
-  summarize(media = mean(pib_percapita, na.rm = TRUE), 
-            sd = sd(pib_percapita, na.rm = TRUE), 
+gini_paises <- datos %>% 
+  group_by(Pais) %>% 
+  summarize(media = mean(Desigualdad, na.rm = TRUE), 
+            sd = sd(Desigualdad, na.rm = TRUE), 
             n = n(), 
             ee = sd/sqrt(n), 
             me = qt(p = 0.025, df = n-1) * ee, 
@@ -152,19 +156,18 @@ pib_paises <- pib %>%
 ```
 
 ```{r}
-ggplot(pib_paises, aes(x = country2, y=media,  ymin = li, ymax = ls)) + 
+ggplot(gini_paises, aes(x = Pais, y=media,  ymin = li, ymax = ls)) + 
   geom_point() + 
-  geom_errorbar() + 
-  scale_y_continuous(labels = dollar)
+  geom_errorbar()
 ```
 
 #### Heterogeneidad dentro de años
 
 ```{r}
-pib_anos <- pib %>% 
-  group_by(year) %>% 
-  summarize(media = mean(pib_percapita, na.rm = TRUE), 
-            sd = sd(pib_percapita, na.rm = TRUE), 
+gini_anos <- datos %>% 
+  group_by(Año) %>% 
+  summarize(media = mean(Desigualdad, na.rm = TRUE), 
+            sd = sd(Desigualdad, na.rm = TRUE), 
             n = n(), 
             ee = sd/sqrt(n), 
             me = qt(p = 0.025, df = n-1) * ee, 
@@ -173,32 +176,63 @@ pib_anos <- pib %>%
 ```
 
 ```{r}
-ggplot(pib_anos, aes(x = year, y=media, ymin = li, ymax = ls)) + 
+ggplot(gini_anos, aes(x = Año, y=media, ymin = li, ymax = ls)) + 
   geom_errorbar() + 
   geom_line() +
-  geom_point() + 
-  scale_y_continuous(labels = dollar)
+  geom_point() 
+ 
 ```
 
 ### ¿Cuál es la relación entre el indice de GINI y el Gasto en educación?
 
 ```{r}
-ggplot(data = datos %>% filter(between(Año, 1960, 2019)), 
-       mapping = aes(x = Desigualdad, y = Gasto_educ, color = Pais)) + 
-  geom_point() + 
-  facet_wrap(vars(Año))
+ggplot(data = datos, mapping = aes(x =Gasto_educ , y = Desigualdad)) + 
+  geom_point()+
+labs(title="Desigualdad vs Gasto en educación", x="Gasto en educación", caption="Fuente: Banco Muncial")+
+  geom_smooth(method = "lm", color ="red")
 ```
 
+### ¿Cuál es la relación entre el indice de GINI y Progresividad?
+
 ```{r}
-ggplot(data = datos, mapping = aes(x = Desigualdad, y = Gasto_educ, color = País, alpha =Año)) + 
-  geom_point()
+ggplot(data = datos, mapping = aes(x =Progresividad , y = Desigualdad)) + 
+  geom_point()+
+labs(title="Desigualdad vs Progresividad de los impuestos", x="Progresividad de los impuestos", caption="Fuente: Banco Muncial")+
+geom_smooth(method = "lm", color ="red")
+```
+
+### ¿Cuál es la relación entre el indice de GINI y el PIB per capita?
+
+```{r}
+ggplot(data = datos, mapping = aes(x =PIB_PER_CAPITA, y = Desigualdad)) + 
+  geom_point()+
+labs(title="Desigualdad vs PIB per capita", x="PIB per capita", caption="Fuente: Banco Muncial")+
+geom_smooth(method = "lm", color ="red")+
+ scale_x_continuous(labels = dollar)
+```
+
+### ¿Cuál es la relación entre el indice de GINI y el Tamaño poblacional?
+
+```{r}
+ggplot(data = datos, mapping = aes(x =Poblacion , y = Desigualdad)) + 
+  geom_point()+
+labs(title="Desigualdad vs Población", x="Tamaño poblacional", caption="Fuente: Banco Muncial")+
+geom_smooth(method = "lm", color ="red")
 ```
 
 ## Principales supuestos de los modelos
 
+-   Linealidad: Que la relación entre las variables sea lineal.
+-   Independencia: Que los errores en la medición de las variables explicativas sean independientes entre sí.
+-   Homocedasticidad: Que los errores tengan varianza constante.
+-   Normalidad: Que las variables sigan la Ley Normal.
+-   No colinealidad: Que las variables independientes no estén correlacionadas entre ellas.
+- Las variables inobservables en el modelo de efectos fijos no tienen un impacto que varie en el tiempo, y su efecto parcial es constante en el tiempo.
+
+
 ## Análisis preliminar de los resultados
 
-¿Resultados vs literatura, Resultados vs Hipoteis. 
+¿Resultados vs literatura, Resultados vs Hipoteis.
 
 ## Bibliografía
 

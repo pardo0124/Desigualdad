@@ -175,11 +175,11 @@ ggplot(resultados, aes(x = homicidios, y = .fitted, color = country2,
   geom_smooth(method = "lm") +
   geom_abline(slope = -480.3, intercept = 31759.24, color = "Red")
 ```
+
 ```{r}
 pib %>% filter(country=="Colombia")
 %>% arrange(desc)
 ```
-
 
 Efectos fijos de año:
 
