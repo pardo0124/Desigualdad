@@ -118,8 +118,8 @@ summary(modelo1)
 
 **Con efectos fijos**
 
-Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de datos panel (Año y Pais).
-.
+Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de datos panel (Año y Pais). .
+
 ```{r}
 
 modelo2 <- plm(Desigualdad ~ Gasto_educ+ Progresividad + Gasto_educ + 
@@ -139,11 +139,20 @@ Ralizamos la siguiente prueba para seleccionar el mejor modelo:
 ```{r}
 pFtest(modelo2, modelo1)
 ```
-Según la prueba el mejor modelo es el "modelo2", el cual es el resultado del método de estimación que controla los efectos fijos. Luego, el "modelo2" es el escogido para continuar con este estudio. 
+
+Según la prueba el mejor modelo es el "modelo2", el cual es el resultado del método de estimación que controla los efectos fijos. Luego, el "modelo2" es el escogido para continuar con este estudio.
 
 ## Lectura de los resultados
 
+Basados en los resultados de la prueba pFtest, podemos asegurar con más de un 99% de confianza que el modelo que mejor se adapta a nuestros propósitos es el modelo de efectos fijos, y los resultados descritos por el modelo nos muestran que:
 
+-   El aumento de un 1% en el gasto público en educación como porcentaje del PIB implica una disminución de 2.6139e-01 en el índice de GINI esto con una confiabilidad del 90%.
+
+-   El aumento de un 1% en el porcentaje de la recaudación que pertenece a los impuestos a la renta, utilidades y ganancias de capital implica una disminución de 5.5178e-02 en el índice de GINI esto con una confiabilidad del 99%.
+
+-   El aumento de un 1 dólar en el PIB per cápita (US\$ a precios actuales) implica un aumento de 4.3227e-05 en el índice de GINI esto con una confiabilidad del 99%.
+
+-   El aumento de una 1 persona en la población total implica un aumento de 3.9349e-08 en el índice de GINI esto con una confiabilidad del 95%.
 
 ### Soporte visual del modelo
 
@@ -233,8 +242,7 @@ geom_smooth(method = "lm", color ="red")
 -   Homocedasticidad: Que los errores tengan varianza constante.
 -   Normalidad: Que las variables sigan la Ley Normal.
 -   No colinealidad: Que las variables independientes no estén correlacionadas entre ellas.
-- Las variables inobservables en el modelo de efectos fijos no tienen un impacto que varie en el tiempo, y su efecto parcial es constante en el tiempo.
-
+-   Las variables inobservables en el modelo de efectos fijos no tienen un impacto que varie en el tiempo, y su efecto parcial es constante en el tiempo.
 
 ## Análisis preliminar de los resultados
 
