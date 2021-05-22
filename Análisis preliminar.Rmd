@@ -139,7 +139,7 @@ Ralizamos la siguiente prueba para seleccionar el mejor modelo:
 ```{r}
 pFtest(modelo2, modelo1)
 ```
-Según la prueba el mejor modelo es el "modelo2", el cual controla los efectos fijos. Luego es el modelo escogido y del que vamos a hablar en este estudio. 
+Según la prueba el mejor modelo es el "modelo2", el cual es el resultado del método de estimación que controla los efectos fijos. Luego, el "modelo2" es el escogido para continuar con este estudio. 
 
 ## Lectura de los resultados
 
