@@ -109,6 +109,7 @@ Las observaciones son los diferentes países del mundo para cada año entre 1960
 
 **Sin efectos fijos**
 
+Primero realizamos un modelo "modelo1" por MCO sin tener en cuenta los efectos fijos de datos panel.
 
 ```{r}
 modelo1 <- lm(Desigualdad~Gasto_educ+Progresividad+Gasto_educ+Inflacion+PIB_PER_CAPITA+Poblacion, data = datos)
@@ -117,6 +118,8 @@ summary(modelo1)
 
 **Con efectos fijos**
 
+Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de datos panel (Año y Pais).
+.
 ```{r}
 
 modelo2 <- plm(Desigualdad ~ Gasto_educ+ Progresividad + Gasto_educ + 
@@ -129,11 +132,14 @@ r.squared(modelo2)
 summary(modelo2)
 ```
 
-¿MCO o efectos_fijos?
+## ¿MCO o efectos_fijos?
+
+Ralizamos la siguiente prueba para seleccionar el mejor modelo:
 
 ```{r}
 pFtest(modelo2, modelo1)
 ```
+Según la prueba el mejor modelo es el "modelo2", el cual controla los efectos fijos. Luego es el modelo escogido y del que vamos a hablar en este estudio. 
 
 ## Lectura de los resultados
 
