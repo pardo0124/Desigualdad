@@ -123,7 +123,7 @@ Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de d
 ```{r}
 
 modelo2 <- plm(Desigualdad ~ Gasto_educ+ Progresividad + Gasto_educ + 
-    Inflacion + PIB_PER_CAPITA + Poblacion, 
+    Inflacion + PIB_PER_CAPITA + Poblacion), 
                      data = datos, 
                      index = c("Pais", "Año"), 
                      model = c("within"), 
