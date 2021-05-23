@@ -24,7 +24,7 @@ library(ggthemes)
 ```{r,cache=TRUE}
 z <- c("SI.POV.GINI","GC.TAX.YPKG.RV.ZS","SE.XPD.TOTL.GD.ZS","FP.CPI.TOTL.ZG","NY.GDP.PCAP.CD","SP.POP.TOTL")
 
-datos <- wb_data(z,country = "countries_only", start_date = 1960, end_date = 2019)
+datos <- wb_data(z,country ="countries_only", start_date = 1960, end_date = 2019)
 
 ```
 
@@ -118,7 +118,7 @@ summary(modelo1)
 
 **Con efectos fijos**
 
-Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de datos panel (Año y Pais). .
+Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de datos panel (Año y Pais).
 
 ```{r}
 
@@ -132,7 +132,7 @@ r.squared(modelo2)
 summary(modelo2)
 ```
 
-## ¿MCO o efectos_fijos?
+## ¿MCO o efectos fijos?
 
 Ralizamos la siguiente prueba para seleccionar el mejor modelo:
 
@@ -146,13 +146,33 @@ Según la prueba el mejor modelo es el "modelo2", el cual es el resultado del m�
 
 Basados en los resultados de la prueba pFtest, podemos asegurar con más de un 99% de confianza que el modelo que mejor se adapta a nuestros propósitos es el modelo de efectos fijos, y los resultados descritos por el modelo nos muestran que:
 
--   El aumento de un 1% en el gasto público en educación como porcentaje del PIB implica una disminución de 2.6139e-01 en el índice de GINI esto con una confiabilidad del 90%.
+-   El aumento de un 1% en el gasto público en educación como porcentaje del
+    PIB implica una disminución de 0.26139 en el índice de GINI, controlando por
+    las variables de control y Ceteris Paribus los demás factores restantes, con un
+    error estándar bajo de 0.14094 aproximadamente, no parece presentar una fuerte
+    significancia estadística con un p valor mayor al 5%.
 
--   El aumento de un 1% en el porcentaje de la recaudación que pertenece a los impuestos a la renta, utilidades y ganancias de capital implica una disminución de 5.5178e-02 en el índice de GINI esto con una confiabilidad del 99%.
+-   El aumento de un 1% en el porcentaje de la recaudación que pertenece a
+    los impuestos a la renta, utilidades y ganancias de capital implica una
+    disminución de 0.05.5178 en el índice de GINI, controlando por las variables de
+    control y ceteris paribus los factores restantes, esta relación tiene una
+    considerable significancia estadística con p valor del 1%.
 
--   El aumento de un 1 dólar en el PIB per cápita (US\$ a precios actuales) implica un aumento de 4.3227e-05 en el índice de GINI esto con una confiabilidad del 99%.
+-   El aumento de un 1 dólar en el PIB per cápita (US\\\$ a precios actuales)
+    implica un aumento de 4.3227e-05 en el índice de GINI, controlando por las
+    variables de control y ceteris paribus los factores restantes, esta relación
+    tiene una considerable significancia estadística con p valor del 1%.
 
--   El aumento de una 1 persona en la población total implica un aumento de 3.9349e-08 en el índice de GINI esto con una confiabilidad del 95%.
+-   El aumento de una 1 persona en la población total implica un aumento de
+    3.9349e-08 en el índice de GINI, controlando por las variables de control y
+    Ceteris paribus los factores restantes, esta relación tiene una considerable
+    significancia estadística con p valor del 5%.
+
+-   El aumento de 1% en la inflación anual implica aumento de 5.0340e-03 en
+    el índice de GINI, controlando por las variables de control y Ceteris paribus
+    los factores restantes, aunque la reacción es acorde a la teoría económica, la
+    magnitud del efecto es muy pequeña y no se presenta significancia estadística
+    con un p valor muy alto de 46% aproximadamente.
 
 ### Soporte visual del modelo
 
@@ -221,9 +241,8 @@ geom_smooth(method = "lm", color ="red")
 ```{r}
 ggplot(data = datos, mapping = aes(x =PIB_PER_CAPITA, y = Desigualdad)) + 
   geom_point()+
-labs(title="Desigualdad vs PIB per capita", x="PIB per capita", caption="Fuente: Banco Muncial")+
-geom_smooth(method = "lm", color ="red")+
- scale_x_continuous(labels = dollar)
+labs(title="Desigualdad vs PIB per capita", x="PIB per capita en dólares corrientes", caption="Fuente: Banco Muncial")+
+geom_smooth(method = "lm", color ="red")
 ```
 
 ### ¿Cuál es la relación entre el indice de GINI y el Tamaño poblacional?
@@ -246,7 +265,89 @@ geom_smooth(method = "lm", color ="red")
 
 ## Análisis preliminar de los resultados
 
-¿Resultados vs literatura, Resultados vs Hipoteis.
+Para empezar, con respecto a la heterogeneidad dentro de los años vemos
+que, en primeros años, hay un serio problema de datos faltantes con uno que
+otra observación a finales de la década de los sesenta y en la década de los
+setenta. Posteriormente, parece haber periodos de inestabilidad, principalmente
+en la década de los ochenta, y en menor medida en la década de los noventa, hay
+que recordar que históricamente este periodo de tiempo está lleno de vaivenes
+tanto países con un desarrollo social y económico impresionante como los países
+nórdicos o los tigres asiáticos o estancamientos y caídas como la Unión
+Soviética, sobre todo, en la caída del muro de Berlín.
+
+Igualmente, es un periodo de tensiones de amenaza nuclear en la Guerra
+Fría, y posteriormente en los noventa, un periodo de transiciones de la
+economía planificada a la economía de mercado y de regímenes socialistas a
+capitalistas en muchos países, así como, la promoción de la globalización y las
+políticas neoliberales a partir del consenso de Washington. Después, vemos que
+a partir del siglo XXI se presenta, inicialmente un descenso en la desigualdad
+y una convergencia de la desigualdad de los diferentes países del mundo, hasta
+que, en la década de 2010, se observa un periodo de gran estabilidad y descenso
+gradual, hasta el 2020, donde la desigualdad sube abruptamente por efectos de
+la pandemia del Coronavirus que pareció aumentar de forma generalizada a
+desigualdad en el mundo.
+
+Por otro lado, se observa que la hipótesis original
+de este estudio, de que existe una relación negativa entre el gasto en
+educación (% del PIB) y el coeficiente Gini, se confirma y concuerda con la
+literatura existente sobre el papel de la educación para afrontar la
+desigualdad. Sin embargo, en la regresión con efectos fijos no muestra una fuerte
+significancia estadística con un p valor al 5%, pero muestra una significancia
+estadística con un p valor menor al 10%, además, que analizar en detalle, esta
+regresión por la influencia de valores atípicos demasiado grandes en la
+variable de gasto en educación que afectan esta relación. Igualmente, a pesar
+de que en el disperso grama no se aprecie una relación definida entre la
+progresividad y el nivel de desigualdad, en la regresión con efectos fijos, la
+relación causal de progresividad y desigualdad es negativa, es decir, a medida
+que sube el PIB per cápita, baja el nivel de desigualdad.
+
+No obstante, una observación bastante preocupante
+del modelo de regresión con efectos fijos es que el R cuadrado es demasiado
+bajo, y el R cuadrado ajustado es negativo, lo que puede indicar que la
+regresión con efectos fijos se pueda ajustar muy mal a los datos, y las
+variables explicativas y de control no puedan explicar la variable
+dependiente.  A pesar de en qué la prueba "pFtest", se muestre que el mejor modelo de regresión es el que controla los efectos fijos de cada país.
+
+Esto puede deberse a diferentes razones, para
+empezar, porque se estudió a los países del mundo como un gran agregado, con
+países con culturas, sistemas políticos drásticamente diferentes que los
+efectos de control parecen no ser suficientes, además, no se toman en cuenta
+las diferencias de la gran variedad de tipos de instituciones educativas en los
+países del mundo ni de los efectos de las diversas etapas educativas, tampoco
+se toman en cuenta las particularidades regionales de los diferentes conjuntos
+de países.
+
+Por otra parte, según la literatura, el gasto en
+educación como porcentaje del PIB per se no es suficiente para afrontar la
+desigualdad, según la literatura la naturaleza del gasto en educación es
+determinante, donde el sistema educativo no debe ser desigual, según autores
+como Santambrogio, Silwester, De Gregorio y Lee y muchos otros, expresan que la
+desigualdad educativa promueve la desigualdad en términos de ingresos, según la
+OXFAM para que la educación sea una herramienta eficaz para combatir la
+desigualdad debe ser universal, gratuita, pública y de calidad, y advierte de
+los peligros de la privatización y las alianzas público-privadas que son una
+barrera para una sociedad más equitativa.
+
+Igualmente, en la naturaleza del gasto de
+educación, es importante tener en cuenta en cuanto se destina en cada etapa
+educativa, por ejemplo, en muchos países subdesarrollados se tiende a destinar
+mayor proporción del gasto a institutos de educación superior, lo que es
+insuficiente para reducir la desigualdad ya que autores como Heckman, Silwester
+y otros resaltan la importancia de los niveles educativos tempranos para el
+desarrollo de habilidades Sico-cognitivas, socioemocionales y de salud de los
+niños.
+
+Esto nos quiere decir, que el estudio de los
+fenómenos de desigualdad y la educación - como un factor crucial para
+combatirlas - tienen bastantes aristas y dimensiones, y debido a la complejidad
+de características y problemáticas, tal como lo muestra la literatura, no es un
+problema social fácil y trivial, sino que se requiere de un mayor nivel de
+investigación y profundización que podría acarrear mucho tiempo (incluso
+décadas), recursos y acaloradas discusiones que no es posible resolver en un
+semestre. De hecho, podemos ver que hay organizaciones reconocidas
+internacionalmente dedicadas enteramente a investigar estas y muchas otras
+problemáticas sociales como la OXFAM y, aun así, no tienen las soluciones
+'definitivas' para enfrentar el fenómeno de la desigualdad.
 
 ## Bibliografía
 
