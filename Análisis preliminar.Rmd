@@ -112,7 +112,7 @@ Las observaciones son los diferentes países del mundo para cada año entre 1960
 Primero realizamos un modelo "modelo1" por MCO sin tener en cuenta los efectos fijos de datos panel.
 
 ```{r}
-modelo1 <- lm(Desigualdad~Gasto_educ+Progresividad+Gasto_educ+Inflacion+PIB_PER_CAPITA+Poblacion, data = datos)
+modelo1 <- lm(Desigualdad~Gasto_educ+Progresividad+Inflacion+PIB_PER_CAPITA+Poblacion, data = datos)
 summary(modelo1)
 ```
 
@@ -122,15 +122,16 @@ Luego realizamos un segundo modelo "Modelo2", controlando los efectos fijos de d
 
 ```{r}
 
-modelo2 <- plm(Desigualdad ~ Gasto_educ+ Progresividad + Gasto_educ + 
-    Inflacion + PIB_PER_CAPITA + Poblacion), 
+modelo2 <- plm(Desigualdad ~ Gasto_educ+Progresividad+Inflacion+PIB_PER_CAPITA+Poblacion,
                      data = datos, 
                      index = c("Pais", "Año"), 
                      model = c("within"), 
                      effect = c("twoway"))
 r.squared(modelo2)
 summary(modelo2)
+
 ```
+Por último, se estimó la regresión excluyendo los valores atípicos del gasto en educación (Anexos, Tabla 1), y se observó que la inclusión de estos datos nos sesgan el impacto de la variable, y tampoco significancia estadística.
 
 ## ¿MCO o efectos fijos?
 
@@ -144,7 +145,7 @@ Según la prueba el mejor modelo es el "modelo2", el cual es el resultado del m�
 
 ## Lectura de los resultados
 
-Basados en los resultados de la prueba pFtest, podemos asegurar con más de un 99% de confianza que el modelo que mejor se adapta a nuestros propósitos es el modelo de efectos fijos, y los resultados descritos por el modelo nos muestran que:
+Basados en los resultados de la prueba pFtest, podemos asegurar con más de un 99% de confianza que el modelo que mejor se adapta a nuestros propósitos es el modelo de efectos fijos.No obstante este modelo presenta un bajo valor predictivo, esto debido a que presenta un $R^2$ Ajustado negativo: "-0.18", a pesar de esto, los resultados descritos por el modelo nos muestran que:
 
 -   El aumento de un 1% en el gasto público en educación como porcentaje del
     PIB implica una disminución de 0.26139 en el índice de GINI, controlando por
@@ -348,6 +349,33 @@ semestre. De hecho, podemos ver que hay organizaciones reconocidas
 internacionalmente dedicadas enteramente a investigar estas y muchas otras
 problemáticas sociales como la OXFAM y, aun así, no tienen las soluciones
 'definitivas' para enfrentar el fenómeno de la desigualdad.
+
+## Anexos
+
+**Exclusión de datos átipicos**
+```{r}
+impute_outliers <- function(x, removeNA = TRUE){
+  quantiles <- quantile(x, c(0., 0.999), na.rm = removeNA)
+  x[x<quantiles[1]] <- mean(x, na.rm = removeNA)
+  x[x>quantiles[2]] <- median(x, na.rm = removeNA)
+  x
+}
+imputed_data <- impute_outliers(datos$Gasto_educ)
+boxplot(datos$Gasto_educ)
+boxplot(imputed_data)
+```
+
+**Tabla 1**
+```{r}
+modelo3 <- plm(Desigualdad ~ I(impute_outliers(Gasto_educ))+ Progresividad+ 
+    Inflacion + PIB_PER_CAPITA + Poblacion, 
+                     data = datos, 
+                     index = c("Pais", "Año"), 
+                     model = c("within"), 
+                     effect = c("twoway"))
+r.squared(modelo3)
+summary(modelo3)
+```
 
 ## Bibliografía
 
